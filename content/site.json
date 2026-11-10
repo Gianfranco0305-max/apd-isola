@@ -49,14 +49,13 @@
     {
       "team": "Under 15",
       "days": "Martedì e giovedì",
-      "time": "Martedì 17:19 (orario da chiarire); giovedì 18:30–20:00",
+      "time": "Martedì 17:00–19:00; giovedì 18:30–20:00",
       "venue": "Palestra APD Isola – Via San Gabriele, Isola del Gran Sasso",
       "sessions": [
         {
           "day": "Martedì",
-          "start": null,
-          "end": null,
-          "note": "Orario da confermare (indicato come 17:19)"
+          "start": "17:00",
+          "end": "19:00"
         },
         {
           "day": "Giovedì",
