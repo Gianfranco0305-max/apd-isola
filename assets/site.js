@@ -20,7 +20,7 @@ async function loadClubContent(){
     const renderCards=(id,items,empty)=>{const box=document.getElementById(id);if(!Array.isArray(items)||!items.length)return;box.replaceChildren();items.filter(i=>i&&i.title).slice(0,8).forEach(i=>{const item=make("div","");item.append(make("strong","",i.title),make("p","",i.description||i.date||""));box.append(item);});if(!box.children.length)box.textContent=empty;};
     renderCards("matches",data.matches,"Calendario in aggiornamento");
     renderCards("updates",data.news,"Notizie in aggiornamento");
-    const docs=document.getElementById("documentsList");
+    const basket=document.getElementById("basketSlots");if(basket&&Array.isArray(data.basketSlots)&&data.basketSlots.length){basket.replaceChildren();data.basketSlots.forEach(s=>{const row=make("div","info-row");row.append(make("strong","",s.day),make("span","",s.activity),make("span","",s.start+"–"+s.end),make("span","",s.type==="gare"?"Fascia gare, non gara confermata":s.type));basket.append(row);});document.getElementById("basketNote").textContent=data.basketScheduleNote||"";}const docs=document.getElementById("documentsList");
     if(Array.isArray(data.documents)&&data.documents.length){
       docs.replaceChildren();
       data.documents.forEach(d=>{if(!d.title||!d.url)return;const url=String(d.url);if(!(/^https:\/\//.test(url)||/^\.\/documents\/[a-zA-Z0-9_.-]+\.pdf$/.test(url)))return;const row=make("div","resource");row.append(make("strong","",d.title));const a=make("a","","Scarica documento ↗");a.href=url;a.target="_blank";a.rel="noopener noreferrer";row.append(a);docs.append(row);});
