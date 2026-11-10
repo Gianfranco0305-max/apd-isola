@@ -10,7 +10,7 @@ async function loadClubContent(){
   try{
     const response=await fetch("./content/site.json",{cache:"no-store"});
     if(!response.ok)throw Error("Contenuti non disponibili");
-    const data=await response.json();if(data.fees){const f=data.fees;if(Array.isArray(f.monthly)&&Array.isArray(f.quarterly)&&Array.isArray(f.fullNineMonths))feePrices={monthly:f.monthly,quarterly:f.quarterly,full:f.fullNineMonths};updateFee();}
+    const data=await response.json();
     const make=(tag,cls,value)=>{const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=value||"";return el;};
     const schedule=document.getElementById("scheduleList");
     if(Array.isArray(data.schedule)&&data.schedule.length){
