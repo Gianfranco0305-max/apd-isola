@@ -22,7 +22,7 @@
       "team": "I Lupi del Gran Sasso",
       "days": "",
       "time": "",
-      "venue": ""
+      "venue": "Palestra APD Isola, Via San Gabriele 100, Isola del Gran Sasso"
     }
   ],
   "matches": [],
@@ -73,5 +73,6 @@
     }
   ],
   "basketSeason": "2026/2027",
-  "basketScheduleNote": "Fasce orarie riservate al settore basket, non orari confermati dei singoli gruppi. Le gare non si svolgono necessariamente ogni settimana. Palestra da confermare."
+  "basketScheduleNote": "Tutte le attività basket indicate si svolgono alla Palestra APD Isola, Via San Gabriele 100. Le fasce sono riservate al settore, non necessariamente gli orari dei singoli gruppi; le gare casalinghe non sono confermate ogni settimana.",
+  "basketVenue": "Palestra APD Isola, Via San Gabriele 100, Isola del Gran Sasso (TE)"
 }
