@@ -1,0 +1,56 @@
+/* APD Isola — Alpine editorial / light premium redesign */
+:root{--bg:#f8f8f6;--text:#20242a;--muted:#606774;--panel:#fff;--line:#e0e3e6;--red:#db2337}
+body{background:#f8f8f6;color:#20242a}
+p{color:#626977}
+.top{background:rgba(255,255,255,.94);border-color:#e5e6e8;box-shadow:0 5px 30px #1d293414}
+.brand,.links a:not(.btn){color:#20242a}.brand small{color:#7b818a}.links a:hover{color:#d82339}
+.menu{color:#222;background:#fff;border-color:#d5d7dc}
+.hero{background:linear-gradient(90deg,rgba(15,29,45,.67),rgba(15,29,45,.18) 72%),linear-gradient(140deg,#b2cadc,#4b7a9b);min-height:760px;border:0}
+.hero::before{background-image:linear-gradient(90deg,rgba(12,26,44,.58),rgba(12,26,44,.05) 80%),url("./gran-sasso-hero.jpg");background-position:center,center 54%;background-size:cover;mask-image:none;inset:0;z-index:-1}
+.hero::after{display:none}
+.hero h1{color:white;font-size:clamp(78px,11vw,158px);max-width:900px;text-shadow:0 5px 30px #0003}
+.hero h1 .red{color:#fff}
+.hero p{color:#fff;max-width:530px;text-shadow:0 2px 16px #0008}
+.hero .eyebrow{color:#fff}
+.hero-line{background:#f12b44}
+.hero-kicker{color:#fff}
+.hero-kicker::before{background:#fff}
+.hero .btn{background:#fff;border-color:#fff;color:#222;box-shadow:0 10px 35px #0003}
+.hero .btn:hover{background:#f5f5f5}
+.hero .btn.ghost{background:#ffffff20;border-color:#fff;color:#fff}
+.hero .btn.ghost:hover{background:#ffffff38}
+.quick-access{margin-top:-56px}
+.quick-link{background:#fff;border:1px solid #e1e3e6;box-shadow:0 18px 45px #1d29341c}
+.quick-link:hover{background:#fff5f5;border-color:#e63a4e}
+.quick-link strong{color:#20242a}.quick-link small{color:#707781}
+section,section:nth-of-type(even),section.subtle{background:#f8f8f6}
+section:nth-of-type(odd){background:#fff}
+.section-head p{color:#646b76}
+h2{color:#20242a}
+.eyebrow{color:#d8243b}
+.card,.fee-card,.fee-card.featured{background:#fff!important;border:1px solid #e1e4e8!important;box-shadow:0 10px 40px #1c283310}
+.card:hover{border-color:#df3449!important;box-shadow:0 20px 50px #1c28331c}
+.card p,.feature p{color:#626977}
+.team::after{border-color:#ed192b0b}
+.team .symbol{background:#f8f0f1;border-color:#f1d9de}
+.tag{color:#bc1d32;background:#fff1f2;border-color:#f6cbd1}
+.btn.ghost{color:#222;border-color:#c9ccd2}
+.btn.ghost:hover{background:#f3f4f5}
+.empty{background:#fff;border-color:#cfd3d9;color:#69717c}
+.info-row{background:#fff!important;border-color:#e1e3e7!important}
+.info-row strong{color:#222}.info-row span{color:#626977}
+.resource{background:#fff;border-color:#e1e3e7}
+.fee-card.featured{border-color:#d82339!important;box-shadow:0 16px 44px #d8233914}
+.fee-card h3{color:#20242a}
+.fee-line{border-color:#e7e8ea}.fee-line strong{color:#20242a}
+.fee-result{background:#fff!important;border-color:#d82339!important}
+.fee-result strong{color:#20242a}
+.fee-controls select,.search,.field input,.field select,.field textarea{background:#fff;color:#20242a;border-color:#cdd1d7}
+.faq{border-color:#d9dce0}.faq summary{color:#20242a}
+.contact{background:#fff;border-color:#e0e3e6;box-shadow:0 10px 45px #1c28330d}
+.notice{color:#737984}
+footer{background:#20242a;color:#f0f0f0}
+footer a{color:#fff}
+#basket-orari{background:#f0f2f3}
+#basket-orari .section-head h2{font-size:clamp(45px,5vw,75px)}
+@media(max-width:740px){.links{background:#fff;border-color:#e0e2e6}.links a:not(.btn){color:#20242a}.hero{min-height:670px}.hero::before{background-position:center,60% center}.hero h1{font-size:clamp(67px,15vw,108px)}.quick-link{box-shadow:0 10px 25px #1d293415}}
