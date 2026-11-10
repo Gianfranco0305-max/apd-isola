@@ -31,10 +31,6 @@ async function loadClubContent(){
 loadClubContent();
 
 
-let feePrices={monthly:[45,80,105],quarterly:[120,210,270],full:[315,540,675]};
-function updateFee(){const n=Number(document.getElementById("feeChildren").value),plan=document.getElementById("feePlan").value,amount=feePrices[plan][n-1],months={monthly:1,quarterly:3,full:9}[plan];document.getElementById("feeTotal").textContent=new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(amount);document.getElementById("feeEquivalent").textContent=months===1?"Importo mensile complessivo per "+n+" "+(n===1?"figlio":"figli"):"Equivalente mensile complessivo: "+new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR"}).format(amount/months)+" (totale formula diviso "+months+" mesi).";}
-["feeChildren","feePlan"].forEach(id=>document.getElementById(id).addEventListener("change",updateFee));updateFee();
-
 /* Sportello famiglie: navigazione assistita senza memorizzazione di dati personali */
 const smartNeed=document.getElementById("smartNeed");
 const smartTeam=document.getElementById("smartTeam");
@@ -53,7 +49,7 @@ document.getElementById("smartGo").addEventListener("click",()=>{
     smartFeedback.textContent="Richiesta preparata: completa i dati e invia l'email dalla sezione contatti.";
     return;
   }
-  const targets={schedule:"orari",fees:"quote",docs:"documenti",contact:"contatti"};
+  if(need==="fees"){const sport=document.getElementById("sportSelect");if(sport)sport.value="Quote e tesseramento";const message=document.querySelector('#contactForm textarea[name="message"]');if(message&&!message.value.trim())message.value="Vorrei ricevere informazioni sulle quote e sulle modalità di iscrizione.";document.getElementById("contatti").scrollIntoView({behavior:"smooth"});smartFeedback.textContent="Completa il modulo per richiedere informazioni sulle quote.";return;}const targets={schedule:"orari",docs:"documenti",contact:"contatti"};
   const target=document.getElementById(targets[need]);
   if(target)target.scrollIntoView({behavior:"smooth"});
 });
