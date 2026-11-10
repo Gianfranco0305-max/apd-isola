@@ -75,3 +75,19 @@ footer a{color:#fff}
 .training-overview-venue{font-size:12px;color:#6b7280;margin:16px 0 0}
 @media(max-width:900px){#scheduleList{grid-template-columns:1fr}}
 @media(max-width:480px){.training-overview{padding:18px}.training-overview-grid{grid-template-columns:1fr}.training-overview-head>strong{font-size:27px}}
+
+/* Match Center category filters */
+.match-category-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0 19px}
+.match-category-tab{border:1px solid #e0e3e7;border-radius:999px;padding:9px 13px;background:#f5f6f8;color:#424b55;font:800 12px Inter,system-ui,sans-serif;cursor:pointer;transition:background .15s,border-color .15s}
+.match-category-tab:hover{border-color:#d92339}.match-category-tab.active{background:#d92339;color:#fff;border-color:#d92339}
+.match-category-tab:focus-visible{outline:3px solid #d92339;outline-offset:3px}
+.match-center-list{display:grid;gap:11px;max-height:620px;overflow-y:auto}
+.match-center-card{border:1px solid #e4e7eb;border-radius:13px;background:#fafbfc;padding:15px}
+.match-center-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}
+.match-center-category{font-size:11px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#b62038}
+.match-center-status{font-size:11px;color:#69727c}
+.match-center-teams{display:block;color:#20252c;font-size:14px;line-height:1.4}
+.match-center-details{font-size:12px;margin:7px 0;color:#606b76}
+.match-center-result{display:block;font-size:12px}
+.match-center-link{display:inline-block;margin-top:8px;color:#b62038;font-size:12px;font-weight:800}
+@media(max-width:480px){.match-category-tabs{gap:6px}.match-category-tab{font-size:11px;padding:8px 10px}.match-center-card{padding:13px}}
