@@ -54,3 +54,8 @@ footer a{color:#fff}
 #basket-orari{background:#f0f2f3}
 #basket-orari .section-head h2{font-size:clamp(45px,5vw,75px)}
 @media(max-width:740px){.links{background:#fff;border-color:#e0e2e6}.links a:not(.btn){color:#20242a}.hero{min-height:670px}.hero::before{background-position:center,60% center}.hero h1{font-size:clamp(67px,15vw,108px)}.quick-link{box-shadow:0 10px 25px #1d293415}}
+
+/* Fix: apply landscape directly to hero, avoiding negative z-index pseudo-element hidden behind hero background. */
+.hero{background-image:linear-gradient(90deg,rgba(17,31,46,.62) 0%,rgba(17,31,46,.26) 56%,rgba(17,31,46,.05) 100%),url("./38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg")!important;background-position:center,center 52%!important;background-size:cover!important;background-repeat:no-repeat!important}
+.hero::before{display:none!important}
+@media(max-width:740px){.hero{background-position:center,57% center!important;background-image:linear-gradient(90deg,rgba(17,31,46,.65),rgba(17,31,46,.25)),url("./38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg")!important}}
