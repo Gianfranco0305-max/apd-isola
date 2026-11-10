@@ -4,25 +4,84 @@
       "team": "Seconda Divisione",
       "days": "Lunedì, martedì e venerdì",
       "time": "Lunedì 19:30–21:30; martedì 19:00–21:00; venerdì 18:00–20:00",
-      "venue": ""
+      "venue": "",
+      "sessions": [
+        {
+          "day": "Lunedì",
+          "start": "19:30",
+          "end": "21:30"
+        },
+        {
+          "day": "Martedì",
+          "start": "19:00",
+          "end": "21:00"
+        },
+        {
+          "day": "Venerdì",
+          "start": "18:00",
+          "end": "20:00"
+        }
+      ]
     },
     {
       "team": "Under 17",
       "days": "Lunedì, martedì e venerdì",
       "time": "Lunedì 19:30–21:30; martedì 19:00–21:00; venerdì 18:00–20:00",
-      "venue": ""
+      "venue": "",
+      "sessions": [
+        {
+          "day": "Lunedì",
+          "start": "19:30",
+          "end": "21:30"
+        },
+        {
+          "day": "Martedì",
+          "start": "19:00",
+          "end": "21:00"
+        },
+        {
+          "day": "Venerdì",
+          "start": "18:00",
+          "end": "20:00"
+        }
+      ]
     },
     {
       "team": "Under 15",
       "days": "Martedì e giovedì",
       "time": "Martedì 17:19 (orario da chiarire); giovedì 18:30–20:00",
-      "venue": ""
+      "venue": "",
+      "sessions": [
+        {
+          "day": "Martedì",
+          "start": null,
+          "end": null,
+          "note": "Orario da confermare (indicato come 17:19)"
+        },
+        {
+          "day": "Giovedì",
+          "start": "18:30",
+          "end": "20:00"
+        }
+      ]
     },
     {
       "team": "Minivolley",
       "days": "Martedì e venerdì",
       "time": "Martedì e venerdì 15:30–17:00",
-      "venue": ""
+      "venue": "",
+      "sessions": [
+        {
+          "day": "Martedì",
+          "start": "15:30",
+          "end": "17:00"
+        },
+        {
+          "day": "Venerdì",
+          "start": "15:30",
+          "end": "17:00"
+        }
+      ]
     }
   ],
   "matches": [
