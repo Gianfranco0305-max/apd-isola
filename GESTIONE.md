@@ -1,24 +1,28 @@
-# Gestione contenuti APD Isola
+# APD Isola — gestione editoriale
 
-## Accesso redazione
-Aprire `/admin/` per i collegamenti rapidi al repository. **Non è un pannello autenticato**: chiunque può vedere questa pagina, ma solo gli utenti autorizzati da GitHub possono modificare i file.
+Il sito è ospitato su GitHub Pages (statico). Il pannello pubblico `/admin/` è un editor locale, **non** un'area privata con login e **non** pubblica automaticamente. La pubblicazione richiede un account GitHub autorizzato al repository.
 
-## Aggiornare il sito
-1. Aprire `content/site.json` su GitHub e premere Edit.
-2. Modificare i campi JSON senza eliminare virgole o virgolette.
-3. Premere Commit changes.
-4. Attendere la distribuzione di GitHub Pages.
+## Aggiornare notizie, partite, orari e documenti
+
+1. Apri `https://gianfranco0305-max.github.io/apd-isola/admin/`.
+2. Modifica i campi e premi **Verifica contenuti**.
+3. Premi **Copia JSON negli appunti**.
+4. Apri `https://github.com/Gianfranco0305-max/apd-isola/edit/main/content/site.json`, seleziona tutto il testo e incolla il JSON.
+5. Premi **Commit changes**: GitHub Pages pubblicherà i nuovi contenuti dopo la distribuzione.
+
+In alternativa scarica il file `site.json` e copiane il contenuto nell'editor GitHub. Puoi anche importare una bozza JSON dal tuo dispositivo. Il pannello non memorizza bozze e non invia dati a server propri.
 
 ## Campi
+
 - `schedule`: team, days, time, venue.
-- `matches`: title, date, description.
 - `news`: title, date, description.
-- `documents`: title, url (es. `./documents/modulo.pdf`).
+- `matches`: title, date, description.
+- `documents`: title, url. Per i PDF locali: `./documents/nome.pdf`.
+- `basketSlots`: fasce riservate alla società **esterna** Blue Basket, non allenamenti APD Isola.
+- `fees`: quote della **pallavolo APD Isola**; da confermare con la segreteria.
 
-Non pubblicare dati personali, elenchi atleti, recapiti privati o moduli compilati. Per la pubblicazione di fotografie di minori servono autorizzazioni appropriate.
+Non pubblicare dati personali, moduli compilati, nominativi di minori o informazioni non autorizzate. Il modulo di contatto del sito prepara un'email sul dispositivo del visitatore; non invia messaggi automaticamente.
 
-## Contatti
-Il form usa `mailto:` e non trasmette automaticamente i dati. Un form server-side sarà una fase separata.
+## Accesso privato e pubblicazione diretta
 
-## Pubblicazione
-Settings > Pages > Deploy from a branch > main > root.
+Per un vero CMS con login e salvataggio diretto servirà una soluzione con autenticazione OAuth e un backend/servizio di autorizzazione (o un provider CMS affidabile). Non inserire mai token GitHub, password o segreti nel JavaScript pubblico di GitHub Pages.
