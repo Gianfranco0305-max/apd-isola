@@ -29,3 +29,8 @@ async function loadClubContent(){
   }catch(err){console.warn("Contenuti non caricati:",err);}
 }
 loadClubContent();
+
+
+const feePrices={monthly:[45,80,105],quarterly:[120,210,270],full:[315,540,675]};
+function updateFee(){const n=Number(document.getElementById("feeChildren").value),plan=document.getElementById("feePlan").value,amount=feePrices[plan][n-1],months={monthly:1,quarterly:3,full:9}[plan];document.getElementById("feeTotal").textContent=new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(amount);document.getElementById("feeEquivalent").textContent=months===1?"Importo mensile complessivo per "+n+" "+(n===1?"figlio":"figli"):"Equivalente mensile complessivo: "+new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR"}).format(amount/months)+" (totale formula diviso "+months+" mesi).";}
+["feeChildren","feePlan"].forEach(id=>document.getElementById(id).addEventListener("change",updateFee));updateFee();
