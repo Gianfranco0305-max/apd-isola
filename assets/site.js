@@ -10,12 +10,12 @@ async function loadClubContent(){
   try{
     const response=await fetch("./content/site.json",{cache:"no-store"});
     if(!response.ok)throw Error("Contenuti non disponibili");
-    const data=await response.json();
+    const data=await response.json();if(data.fees){const f=data.fees;if(Array.isArray(f.monthly)&&Array.isArray(f.quarterly)&&Array.isArray(f.fullNineMonths))feePrices={monthly:f.monthly,quarterly:f.quarterly,full:f.fullNineMonths};updateFee();}
     const make=(tag,cls,value)=>{const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=value||"";return el;};
     const schedule=document.getElementById("scheduleList");
     if(Array.isArray(data.schedule)&&data.schedule.length){
       schedule.replaceChildren();
-      data.schedule.forEach(s=>{const row=make("div","info-row");row.append(make("strong","",s.team),make("span","",s.days||"Giorni da confermare"),make("span","",s.time||"Orario da confermare"),make("span","",s.venue||"Palestra da confermare"));schedule.append(row);});
+      data.schedule.forEach(s=>{const row=make("div","info-row");row.dataset.team=s.team;row.append(make("strong","",s.team),make("span","",s.days||"Giorni da confermare"),make("span","",s.time||"Orario da confermare"),make("span","",s.venue||"Palestra da confermare"));schedule.append(row);});applyScheduleFilter();
     }
     const renderCards=(id,items,empty)=>{const box=document.getElementById(id);if(!Array.isArray(items)||!items.length)return;box.replaceChildren();items.filter(i=>i&&i.title).slice(0,8).forEach(i=>{const item=make("div","");item.append(make("strong","",i.title),make("p","",i.description||i.date||""));box.append(item);});if(!box.children.length)box.textContent=empty;};
     renderCards("matches",data.matches,"Calendario in aggiornamento");
@@ -31,6 +31,31 @@ async function loadClubContent(){
 loadClubContent();
 
 
-const feePrices={monthly:[45,80,105],quarterly:[120,210,270],full:[315,540,675]};
+let feePrices={monthly:[45,80,105],quarterly:[120,210,270],full:[315,540,675]};
 function updateFee(){const n=Number(document.getElementById("feeChildren").value),plan=document.getElementById("feePlan").value,amount=feePrices[plan][n-1],months={monthly:1,quarterly:3,full:9}[plan];document.getElementById("feeTotal").textContent=new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(amount);document.getElementById("feeEquivalent").textContent=months===1?"Importo mensile complessivo per "+n+" "+(n===1?"figlio":"figli"):"Equivalente mensile complessivo: "+new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR"}).format(amount/months)+" (totale formula diviso "+months+" mesi).";}
 ["feeChildren","feePlan"].forEach(id=>document.getElementById(id).addEventListener("change",updateFee));updateFee();
+
+/* Sportello famiglie: navigazione assistita senza memorizzazione di dati personali */
+const smartNeed=document.getElementById("smartNeed");
+const smartTeam=document.getElementById("smartTeam");
+const smartTeamBox=document.getElementById("smartTeamBox");
+const smartFeedback=document.getElementById("smartFeedback");
+function syncSmart(){smartTeamBox.hidden=smartNeed.value!=="join";smartFeedback.textContent=smartNeed.value==="join"?"La segreteria confermerà gruppo, disponibilità e modalità di iscrizione.":"Ti porteremo direttamente alla sezione richiesta.";}
+smartNeed.addEventListener("change",syncSmart);syncSmart();
+document.getElementById("smartGo").addEventListener("click",()=>{
+  const need=smartNeed.value,team=smartTeam.value;
+  if(need==="join"){
+    const sport=document.getElementById("sportSelect");
+    sport.value=team==="none"?"Informazioni generali":"Pallavolo – "+team;
+    const message=document.querySelector('#contactForm textarea[name="message"]');
+    if(!message.value.trim())message.value=team==="none"?"Vorrei informazioni sui gruppi di pallavolo disponibili e sulle modalità di iscrizione.":"Vorrei informazioni sul gruppo "+team+", sugli allenamenti e sulle modalità di iscrizione.";
+    document.getElementById("contatti").scrollIntoView({behavior:"smooth"});
+    smartFeedback.textContent="Richiesta preparata: completa i dati e invia l'email dalla sezione contatti.";
+    return;
+  }
+  const targets={schedule:"orari",fees:"quote",docs:"documenti",contact:"contatti"};
+  const target=document.getElementById(targets[need]);
+  if(target)target.scrollIntoView({behavior:"smooth"});
+});
+function applyScheduleFilter(){const select=document.getElementById("scheduleFilter");if(!select)return;const value=select.value;document.querySelectorAll("#scheduleList .info-row").forEach(row=>{row.hidden=value!=="all"&&row.dataset.team!==value;});}
+document.getElementById("scheduleFilter").addEventListener("change",applyScheduleFilter);
