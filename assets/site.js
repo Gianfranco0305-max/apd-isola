@@ -15,7 +15,7 @@ async function loadClubContent(){
     const schedule=document.getElementById("scheduleList");
     if(Array.isArray(data.schedule)&&data.schedule.length){
       schedule.replaceChildren();
-      data.schedule.forEach(s=>{const row=make("div","info-row");row.dataset.team=s.team;row.append(make("strong","",s.team),make("span","",s.days||"Giorni da confermare"),make("span","",s.time||"Orario da confermare"),make("span","",s.venue||"Palestra da confermare"));schedule.append(row);});applyScheduleFilter();
+      data.schedule.forEach(s=>{const row=make("div","training-overview");row.dataset.team=s.team;const header=make("div","training-overview-head");header.append(make("strong","",s.team));const slugs={"Seconda Divisione":"seconda-divisione","Under 17":"under-17","Under 15":"under-15","Minivolley":"minivolley"};if(slugs[s.team]){const link=make("a","training-detail-link","Scheda squadra ↗");link.href="./squadre/"+slugs[s.team]+"/";header.append(link);}row.append(header);const grid=make("div","training-overview-grid");if(Array.isArray(s.sessions)&&s.sessions.length){s.sessions.forEach(session=>{const card=make("div","training-overview-slot");card.append(make("span","training-overview-day",session.day));card.append(make("strong","training-overview-time",session.start&&session.end?session.start+" – "+session.end:"Da confermare"));if(session.note)card.append(make("small","",session.note));grid.append(card);});}else grid.append(make("span","", "Orari da confermare"));row.append(grid);const venue=make("p","training-overview-venue","Palestra: "+(s.venue||"da confermare"));row.append(venue);schedule.append(row);});applyScheduleFilter();
     }
     const renderCards=(id,items,empty)=>{const box=document.getElementById(id);if(!Array.isArray(items)||!items.length)return;box.replaceChildren();items.filter(i=>i&&i.title).slice(0,8).forEach(i=>{const item=make("div","");item.append(make("strong","",i.title),make("p","",i.description||i.date||""));box.append(item);});if(!box.children.length)box.textContent=empty;};
     renderCards("matches",data.matches,"Calendario in aggiornamento");
@@ -57,5 +57,5 @@ document.getElementById("smartGo").addEventListener("click",()=>{
   const target=document.getElementById(targets[need]);
   if(target)target.scrollIntoView({behavior:"smooth"});
 });
-function applyScheduleFilter(){const select=document.getElementById("scheduleFilter");if(!select)return;const value=select.value;document.querySelectorAll("#scheduleList .info-row").forEach(row=>{row.hidden=value!=="all"&&row.dataset.team!==value;});}
+function applyScheduleFilter(){const select=document.getElementById("scheduleFilter");if(!select)return;const value=select.value;document.querySelectorAll("#scheduleList [data-team]").forEach(row=>{row.hidden=value!=="all"&&row.dataset.team!==value;});}
 document.getElementById("scheduleFilter").addEventListener("change",applyScheduleFilter);
