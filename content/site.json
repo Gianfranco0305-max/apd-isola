@@ -2,26 +2,26 @@
   "schedule": [
     {
       "team": "Seconda Divisione",
-      "days": "",
-      "time": "",
+      "days": "Lunedì, martedì e venerdì",
+      "time": "Lunedì 19:30–21:30; martedì 19:00–21:00; venerdì 18:00–20:00",
       "venue": ""
     },
     {
       "team": "Under 17",
-      "days": "",
-      "time": "",
+      "days": "Lunedì, martedì e venerdì",
+      "time": "Lunedì 19:30–21:30; martedì 19:00–21:00; venerdì 18:00–20:00",
       "venue": ""
     },
     {
       "team": "Under 15",
-      "days": "",
-      "time": "",
+      "days": "Martedì e giovedì",
+      "time": "Martedì 17:19 (orario da chiarire); giovedì 18:30–20:00",
       "venue": ""
     },
     {
       "team": "Minivolley",
-      "days": "",
-      "time": "",
+      "days": "Martedì e venerdì",
+      "time": "Martedì e venerdì 15:30–17:00",
       "venue": ""
     }
   ],
@@ -94,5 +94,6 @@
     ],
     "membershipAndKit": 80,
     "disclaimer": "Quote da confermare con la segreteria prima del pagamento."
-  }
+  },
+  "season": "2026/2027"
 }
