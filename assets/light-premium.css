@@ -59,3 +59,19 @@ footer a{color:#fff}
 .hero{background-image:linear-gradient(90deg,rgba(17,31,46,.62) 0%,rgba(17,31,46,.26) 56%,rgba(17,31,46,.05) 100%),url("./38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg")!important;background-position:center,center 52%!important;background-size:cover!important;background-repeat:no-repeat!important}
 .hero::before{display:none!important}
 @media(max-width:740px){.hero{background-position:center,57% center!important;background-image:linear-gradient(90deg,rgba(17,31,46,.65),rgba(17,31,46,.25)),url("./38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg")!important}}
+
+/* Training schedule: balanced, scannable day-by-day cards */
+#scheduleList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.training-overview{background:#fff;border:1px solid #e1e5e9;border-radius:20px;padding:24px;box-shadow:0 10px 35px #1c28330b}
+.training-overview-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.training-overview-head>strong{font-family:"Barlow Condensed",Impact,sans-serif;font-size:30px;line-height:1.1;text-transform:uppercase;color:#222832}
+.training-detail-link{font-size:12px;font-weight:800;color:#c41c35;white-space:nowrap}
+.training-detail-link:hover{text-decoration:underline}
+.training-overview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.training-overview-slot{background:#f5f6f8;border-left:3px solid #d92339;border-radius:10px;padding:12px 13px;min-width:0}
+.training-overview-day{display:block;color:#9e1d31;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.09em;margin-bottom:5px}
+.training-overview-time{display:block;color:#242b34;font-size:15px;font-weight:800;font-variant-numeric:tabular-nums}
+.training-overview-slot small{display:block;color:#6b7280;font-size:11px;margin-top:5px}
+.training-overview-venue{font-size:12px;color:#6b7280;margin:16px 0 0}
+@media(max-width:900px){#scheduleList{grid-template-columns:1fr}}
+@media(max-width:480px){.training-overview{padding:18px}.training-overview-grid{grid-template-columns:1fr}.training-overview-head>strong{font-size:27px}}
