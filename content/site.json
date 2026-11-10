@@ -27,5 +27,51 @@
   ],
   "matches": [],
   "news": [],
-  "documents": []
+  "documents": [],
+  "basketSlots": [
+    {
+      "day": "Lunedì",
+      "activity": "Blue Basket Roseto",
+      "start": "15:45",
+      "end": "19:45",
+      "type": "settore giovanile"
+    },
+    {
+      "day": "Mercoledì",
+      "activity": "Blue Basket Roseto",
+      "start": "15:45",
+      "end": "20:15",
+      "type": "settore giovanile"
+    },
+    {
+      "day": "Giovedì",
+      "activity": "Blue Basket Roseto",
+      "start": "16:30",
+      "end": "18:30",
+      "type": "settore giovanile"
+    },
+    {
+      "day": "Giovedì",
+      "activity": "Blue Basket Prima Squadra",
+      "start": "20:00",
+      "end": "22:00",
+      "type": "prima squadra"
+    },
+    {
+      "day": "Venerdì",
+      "activity": "Fascia riservata a gare casalinghe",
+      "start": "18:00",
+      "end": "20:00",
+      "type": "gare"
+    },
+    {
+      "day": "Sabato",
+      "activity": "Fascia riservata a gare casalinghe",
+      "start": "18:00",
+      "end": "20:00",
+      "type": "gare"
+    }
+  ],
+  "basketSeason": "2026/2027",
+  "basketScheduleNote": "Fasce orarie riservate al settore basket, non orari confermati dei singoli gruppi. Le gare non si svolgono necessariamente ogni settimana. Palestra da confermare."
 }
