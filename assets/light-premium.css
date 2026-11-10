@@ -91,3 +91,21 @@ footer a{color:#fff}
 .match-center-result{display:block;font-size:12px}
 .match-center-link{display:inline-block;margin-top:8px;color:#b62038;font-size:12px;font-weight:800}
 @media(max-width:480px){.match-category-tabs{gap:6px}.match-category-tab{font-size:11px;padding:8px 10px}.match-center-card{padding:13px}}
+
+/* Three simultaneous category panels: dates and kickoff times are primary */
+.match-center-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.match-category-panel{background:#fff;border:1px solid #e1e5e9;border-radius:20px;padding:23px 20px;min-width:0;box-shadow:0 10px 35px #1c28330b}
+.match-category-kicker{display:block;color:#bd2038;font-size:10px;letter-spacing:.12em;font-weight:900}
+.match-category-title{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(29px,3vw,39px);line-height:1.1;text-transform:uppercase;margin:7px 0 20px}
+.match-fixture{padding:15px 0;border-top:1px solid #e8eaed}
+.match-fixture-when{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.match-fixture-when strong{color:#b51e35;font-size:13px;text-transform:capitalize}
+.match-fixture-when span{background:#f7e9ec;color:#a61d33;border-radius:8px;padding:4px 7px;font-size:12px;font-weight:900;white-space:nowrap}
+.match-fixture-teams{display:block;font-size:13px;line-height:1.5;color:#232932}
+.match-fixture-place{font-size:11px;color:#66717c;margin:6px 0 0}
+.match-fixture-past{display:block;font-size:11px;color:#747d87;margin-top:5px}
+.match-fixture-result{display:block;font-size:12px;margin-top:5px}
+.match-category-all{display:inline-block;color:#b62038;font-weight:800;font-size:12px;margin-top:18px}
+.match-news{margin-top:22px}
+@media(max-width:1000px){.match-center-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.match-center-grid{grid-template-columns:1fr}.match-category-panel{padding:21px}.match-fixture-when strong{font-size:14px}}
