@@ -399,25 +399,5 @@
   "basketSeason": "2026/2027",
   "basketScheduleNote": "Blue Basket è una società esterna che utilizza la palestra APD Isola. Le fasce indicate sono riservate alla società esterna e non rappresentano attività organizzate da APD Isola; le gare non sono necessariamente confermate ogni settimana.",
   "basketVenue": "Palestra APD Isola, Via San Gabriele 100, Isola del Gran Sasso (TE)",
-  "fees": {
-    "sport": "Pallavolo APD Isola",
-    "monthly": [
-      45,
-      80,
-      105
-    ],
-    "quarterly": [
-      120,
-      210,
-      270
-    ],
-    "fullNineMonths": [
-      315,
-      540,
-      675
-    ],
-    "membershipAndKit": 80,
-    "disclaimer": "Quote da confermare con la segreteria prima del pagamento."
-  },
   "season": "2026/2027"
 }
