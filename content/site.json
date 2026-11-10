@@ -17,12 +17,6 @@
       "days": "",
       "time": "",
       "venue": ""
-    },
-    {
-      "team": "I Lupi del Gran Sasso",
-      "days": "",
-      "time": "",
-      "venue": "Palestra APD Isola, Via San Gabriele 100, Isola del Gran Sasso"
     }
   ],
   "matches": [],
@@ -73,6 +67,26 @@
     }
   ],
   "basketSeason": "2026/2027",
-  "basketScheduleNote": "Tutte le attività basket indicate si svolgono alla Palestra APD Isola, Via San Gabriele 100. Le fasce sono riservate al settore, non necessariamente gli orari dei singoli gruppi; le gare casalinghe non sono confermate ogni settimana.",
-  "basketVenue": "Palestra APD Isola, Via San Gabriele 100, Isola del Gran Sasso (TE)"
+  "basketScheduleNote": "Blue Basket è una società esterna che utilizza la palestra APD Isola. Le fasce indicate sono riservate alla società esterna e non rappresentano attività organizzate da APD Isola; le gare non sono necessariamente confermate ogni settimana.",
+  "basketVenue": "Palestra APD Isola, Via San Gabriele 100, Isola del Gran Sasso (TE)",
+  "fees": {
+    "sport": "Pallavolo APD Isola",
+    "monthly": [
+      45,
+      80,
+      105
+    ],
+    "quarterly": [
+      120,
+      210,
+      270
+    ],
+    "fullNineMonths": [
+      315,
+      540,
+      675
+    ],
+    "membershipAndKit": 80,
+    "disclaimer": "Quote da confermare con la segreteria prima del pagamento."
+  }
 }
