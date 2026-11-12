@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /anteprima/
+Disallow: /anteprima-premium/
+Sitemap: https://gianfranco0305-max.github.io/apd-isola/sitemap.xml
