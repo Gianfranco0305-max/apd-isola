@@ -268,7 +268,7 @@ body{padding-left:76px!important}
 /* Fixed oversize original APD Isola logo, visible subtly through scrolling sections. */
 html{background:#10161e}
 body{position:relative;background:transparent!important}
-body::before{content:"";position:fixed;z-index:0;pointer-events:none;inset:0 0 0 76px;background-image:url("./Immagine%20Profilo%20Polisportiva%20(10).png");background-repeat:no-repeat;background-position:76% 53%;background-size:min(67vw,1040px) auto;opacity:.045;filter:grayscale(1);transform:translateZ(0)}
+body::before{content:"";position:fixed;z-index:0;pointer-events:none;inset:0 0 0 76px;background-image:url("../Immagine%20Profilo%20Polisportiva%20(10).png");background-repeat:no-repeat;background-position:76% 53%;background-size:min(67vw,1040px) auto;opacity:.045;filter:grayscale(1);transform:translateZ(0)}
 body::after{content:"";position:fixed;z-index:-1;inset:0;background:#f5f5f3;pointer-events:none}
 body>*{position:relative}
 body>.apd-icon-rail{position:fixed}
