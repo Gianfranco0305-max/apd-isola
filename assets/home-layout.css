@@ -1,0 +1,195 @@
+.smart-section{background:#f0f2f3!important}.smart-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:32px}.smart-heading h2{font-size:clamp(46px,6vw,82px);margin:14px 0}.smart-heading p{max-width:560px}.smart-symbol{font-size:85px;color:#d92339;line-height:1}.smart-panel{background:#fff;border:1px solid #e2e5e8;border-radius:22px;padding:clamp(22px,4vw,45px);box-shadow:0 25px 65px #17233512;max-width:900px}.smart-step{display:flex;align-items:center;gap:14px;margin:0 0 12px;font-size:15px;font-weight:800}.smart-number{color:#d82339;font-size:12px;letter-spacing:.1em}.smart-select{width:100%;background:#f8f9fa;border:1px solid #cbd0d6;color:#1f252b;border-radius:12px;padding:17px 18px;font-size:16px;margin-bottom:24px}.smart-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.smart-actions p{font-size:12px;margin:0}.smart-primary{border:0;border-radius:10px;padding:16px 26px;background:#d92339;color:#fff;font-weight:800;display:inline-flex;gap:30px;align-items:center}.smart-primary:hover{background:#bd172c}.smart-panel [hidden]{display:none!important}.schedule-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}.schedule-tools label{font-weight:800}.schedule-tools select{padding:11px 15px;border:1px solid #cbd0d6;background:white;color:#20242a;border-radius:10px}.info-row[hidden]{display:none!important}.smart-inline{margin-top:12px;display:inline-block;color:#b91f35;font-weight:800;text-decoration:underline;text-underline-offset:4px}@media(max-width:740px){.smart-heading{align-items:start}.smart-symbol{font-size:44px}.smart-actions{align-items:stretch;flex-direction:column}.smart-primary{justify-content:space-between;width:100%}} .hero h1{transform:translateY(-18px)} .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);column-gap:32px;align-items:center}.hero .hero-line,.hero .eyebrow,.hero h1,.hero p,.hero .actions{grid-column:1}.hero h1{font-size:clamp(70px,9vw,128px);white-space:nowrap}.hero-motto{grid-column:2;grid-row:1 / span 5;justify-self:end;text-align:right;font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(52px,6vw,96px);font-weight:900;line-height:.95;letter-spacing:-.025em;color:#fff;text-shadow:0 4px 28px #0008}.brand-name small{display:none}@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero .hero-line,.hero .eyebrow,.hero h1,.hero p,.hero .actions,.hero-motto{grid-column:1}.hero-motto{grid-row:auto;justify-self:end;text-align:right;font-size:clamp(48px,10vw,82px);margin:12px 0 22px}.hero h1{font-size:clamp(60px,12vw,100px)}}@media(max-width:480px){.hero h1{font-size:clamp(53px,12vw,75px)}.hero-motto{font-size:clamp(46px,12vw,68px)}} /* Sportello famiglie: compact layout */
+#sportello.smart-section{padding-top:42px;padding-bottom:46px}
+#sportello .smart-heading{margin-bottom:20px;align-items:center}
+#sportello .smart-heading h2{font-size:clamp(34px,4.1vw,56px);line-height:1.02;margin:8px 0 10px}
+#sportello .smart-heading p{font-size:13px;max-width:530px;margin:0}
+#sportello .smart-symbol{font-size:55px}
+#sportello .smart-panel{max-width:740px;padding:clamp(20px,2.6vw,30px);border-radius:18px}
+#sportello .smart-step{margin-bottom:8px;font-size:13px}
+#sportello .smart-select{padding:12px 14px;font-size:14px;margin-bottom:16px}
+#sportello .smart-primary{padding:12px 20px;font-size:13px}
+@media(max-width:650px){#sportello.smart-section{padding-top:32px;padding-bottom:34px}#sportello .smart-heading h2{font-size:clamp(32px,9vw,44px)}#sportello .smart-symbol{display:none}}
+
+/* Sportello and forms, side by side */
+#sportello .smart-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:22px;align-items:stretch}
+#sportello .smart-panel{max-width:none;min-width:0}
+#sportello .smart-docs{min-width:0;background:#fff;border:1px solid #e2e5e8;border-radius:18px;padding:clamp(20px,2.6vw,30px);box-shadow:0 25px 65px #17233512}
+#sportello .smart-docs h3{font-size:clamp(28px,3vw,39px);margin:10px 0 12px;color:#222831}
+#sportello .smart-docs>p{font-size:13px;color:#626c77;margin:0 0 20px}
+#sportello .smart-docs .info-table{margin:0 0 18px}
+#sportello .smart-docs .empty{font-size:13px;color:#59636f;padding:18px;background:#f7f8fa;border:1px solid #e8ebee;border-radius:12px}
+#sportello .smart-docs-contact{display:inline-flex;color:#b51e35;font-weight:800;font-size:13px;text-decoration:none}
+@media(max-width:850px){#sportello .smart-layout{grid-template-columns:1fr}#sportello .smart-docs{padding:22px}}
+
+/* Basket and Corsa di San Gabriele feature cards */
+.community-section{padding:78px 0;background:#fff}
+.community-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.community-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #e0e4e8;border-radius:20px;box-shadow:0 14px 42px #1823310b;display:flex;flex-direction:column}
+.community-card-art{height:185px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#192737,#344c65);position:relative}
+.community-card-art::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 36px,#ffffff08 36px,#ffffff08 38px)}
+.community-card-art span{font-size:86px;filter:drop-shadow(0 10px 18px #0004);z-index:1}
+.community-race .community-card-art{background:linear-gradient(135deg,#344b4d,#728b79)}
+.community-card-body{padding:29px 32px 32px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.community-card-kicker{font-size:10px;letter-spacing:.14em;color:#bd2038;font-weight:900}
+.community-card h3{font-size:clamp(33px,3.7vw,49px);line-height:1.04;margin:13px 0 15px;color:#222831}
+.community-card p{font-size:14px;line-height:1.65;color:#5e6874;margin:0 0 24px}
+.community-card-link{margin-top:auto;display:inline-flex;align-items:center;gap:14px;border-radius:10px;padding:12px 18px;background:#d92339;color:#fff!important;font-size:12px;font-weight:800;text-decoration:none}
+.community-card-link:hover{background:#b51e32}
+@media(max-width:700px){.community-section{padding:52px 0}.community-grid{grid-template-columns:1fr}.community-card-art{height:145px}.community-card-body{padding:23px}}
+
+/* Volleyball teams: official logo and direct schedule shortcuts */
+#teams .team{display:flex;flex-direction:column;align-items:stretch;min-width:0}
+#teams .team-brand{height:76px;width:76px;display:flex;align-items:center;justify-content:center;background:#141517;border-radius:16px;overflow:hidden;margin-bottom:17px;border:1px solid #e7e0e2}
+#teams .team-brand img{width:100%;height:100%;object-fit:contain;display:block}
+#teams .team-card-content{display:flex;flex-direction:column;align-items:flex-start;flex:1;min-width:0}
+#teams .team-card-content>p{flex:1}
+#teams .team-card-actions{display:flex;flex-wrap:wrap;gap:9px;width:100%;margin-top:auto}
+#teams .team-card-actions .btn{padding:11px 12px;font-size:11px;line-height:1.3;white-space:normal;text-align:center;flex:1 1 auto;min-width:0}
+#teams .team-btn-secondary{background:#fff!important;color:#b82038!important;border:1px solid #d92339!important;box-shadow:none!important}
+#teams .team-btn-secondary:hover{background:#fff2f4!important}
+@media(max-width:700px){#teams .team-brand{height:76px;width:76px}#teams .team-card-actions{flex-direction:column}#teams .team-card-actions .btn{width:100%}}
+
+/* Team photo: compact, clearly visible image integrated to the right of the heading */
+#sport{position:relative;overflow:hidden}
+#sport::before,#sport::after{content:none!important}
+#sport .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,340px);column-gap:34px;row-gap:8px;align-items:center}
+#sport .section-head>div:first-child{grid-column:1;grid-row:1}
+#sport .section-head>p{grid-column:1;grid-row:2;max-width:540px;margin:0}
+#sport .team-section-photo{grid-column:2;grid-row:1 / span 2;position:relative;margin:0;height:205px;border-radius:19px;overflow:hidden;box-shadow:0 16px 38px #1a27331a;border:1px solid #ffffffb8;background:#e9edf0}
+#sport .team-section-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:grayscale(.55) contrast(1.04);opacity:.92}
+#sport .team-section-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f7f8f924,transparent 45%,#fff1);pointer-events:none}
+@media(max-width:800px){#sport .section-head{grid-template-columns:minmax(0,1fr) 220px;column-gap:20px}#sport .team-section-photo{height:165px}}
+@media(max-width:600px){#sport .section-head{grid-template-columns:1fr}#sport .section-head>div:first-child{grid-column:1;grid-row:1}#sport .section-head>p{grid-column:1;grid-row:2}#sport .team-section-photo{grid-column:1;grid-row:3;width:min(100%,340px);height:165px;margin:10px 0 0}}
+
+.quote-inquiry-section{padding:48px 0}
+.quote-inquiry-card{display:flex;justify-content:space-between;align-items:center;gap:26px;background:#fff;border:1px solid #e1e5e9;border-radius:19px;padding:30px 36px;box-shadow:0 12px 38px #1723350a}
+.quote-inquiry-card h2{font-size:clamp(36px,5vw,57px);line-height:1.05;margin:9px 0}
+.quote-inquiry-card p{font-size:14px;color:#626c77;max-width:570px;margin:0}
+.quote-inquiry-card .btn{white-space:nowrap}
+@media(max-width:700px){.quote-inquiry-card{flex-direction:column;align-items:flex-start;padding:25px}.quote-inquiry-card .btn{width:100%;text-align:center}}
+
+/* Continuous sponsor strip between quick links and family desk */
+.sponsor-ticker{background:#fff;border-bottom:1px solid #e6e9ec;padding:12px 0}
+.sponsor-ticker-shell{display:flex;align-items:center;gap:25px;min-width:0}
+.sponsor-ticker-label{flex:none;font-size:10px;font-weight:900;letter-spacing:.14em;color:#b51e35;white-space:nowrap}
+.sponsor-ticker-viewport{overflow:hidden;flex:1;min-width:0;mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+.sponsor-ticker-track{display:flex;width:max-content;animation:sponsor-ticker-move 38s linear infinite;will-change:transform}
+.sponsor-ticker-group{display:flex;flex:none;align-items:center;gap:65px;padding-right:65px}
+.sponsor-ticker-item{display:flex;align-items:center;justify-content:center;width:165px;height:58px;flex:none}
+.sponsor-ticker-item img{max-width:100%;max-height:53px;width:auto;height:auto;object-fit:contain;display:block}
+@keyframes sponsor-ticker-move{to{transform:translateX(-50%)}}
+.sponsor-ticker-viewport:hover .sponsor-ticker-track{animation-play-state:paused}
+@media(max-width:650px){.sponsor-ticker-shell{gap:12px}.sponsor-ticker-label{font-size:9px;max-width:70px;white-space:normal}.sponsor-ticker-item{width:135px;height:48px}.sponsor-ticker-item img{max-height:43px}.sponsor-ticker-group{gap:38px;padding-right:38px}}
+@media(prefers-reduced-motion:reduce){.sponsor-ticker-track{animation:none}.sponsor-ticker-viewport{overflow-x:auto}}
+
+/* Team image blends into the page instead of appearing as a framed card */
+#sport .section-head{grid-template-columns:minmax(0,1fr) minmax(280px,390px);column-gap:20px}
+#sport .team-section-photo{height:245px;border:0;border-radius:0;box-shadow:none;background:transparent;overflow:hidden;mask-image:radial-gradient(ellipse 74% 75% at 54% 49%,#000 42%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 74% 75% at 54% 49%,#000 42%,transparent 100%)}
+#sport .team-section-photo img{filter:grayscale(.35) saturate(.75);opacity:.85;object-position:center 42%}
+#sport .team-section-photo::after{content:none}
+@media(max-width:800px){#sport .section-head{grid-template-columns:minmax(0,1fr) 250px}#sport .team-section-photo{height:185px}}
+@media(max-width:600px){#sport .section-head{grid-template-columns:1fr}#sport .team-section-photo{width:min(100%,360px);height:185px;margin-left:auto;margin-right:auto}}
+
+/* Lupi del Gran Sasso: team photo and direct actions */
+.community-basket .community-basket-photo{height:240px;background:#1d2834}
+.community-basket .community-basket-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 45%}
+.community-basket .community-basket-photo::after{content:none}
+.community-basket .community-card-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.community-basket .community-card-link{margin-top:0;min-height:44px;align-items:center}
+.community-basket .community-card-link-outline{background:#fff;color:#bd2038!important;border:1px solid #d92339}
+.community-basket .community-card-link-outline:hover{background:#fff0f3}
+@media(max-width:700px){.community-basket .community-basket-photo{height:200px}.community-basket .community-card-actions{flex-direction:column;width:100%}.community-basket .community-card-link{justify-content:center}}
+
+/* Three sponsor logos loop seamlessly, ATOTIS retains main sponsor status */
+.sponsor-ticker-group{gap:48px;padding-right:48px}
+.sponsor-ticker-item{position:relative;width:200px;height:72px;padding:4px 10px}
+.sponsor-ticker-item img{max-height:59px;max-width:100%}
+.sponsor-ticker-item.sponsor-main{padding-bottom:14px}
+.sponsor-ticker-item.sponsor-main img{max-height:49px}
+.sponsor-main-tag{position:absolute;bottom:0;left:50%;transform:translateX(-50%);font-size:8px;font-weight:800;letter-spacing:.12em;color:#c61c35;white-space:nowrap}
+.sponsor-ticker-track{animation-duration:26s}
+@media(max-width:650px){.sponsor-ticker-group{gap:24px;padding-right:24px}.sponsor-ticker-item{width:155px;height:62px;padding:4px}.sponsor-ticker-item img{max-height:49px}.sponsor-ticker-item.sponsor-main img{max-height:40px}}
+
+/* Sponsor ribbon visibility and spacing refresh */
+.sponsor-ticker{padding:18px 0;background:#fff;border-top:1px solid #f0e6e8;border-bottom:1px solid #e7e8eb}
+.sponsor-ticker-item{width:230px;height:84px}
+.sponsor-ticker-item img{max-height:70px}
+.sponsor-ticker-item.sponsor-main img{max-height:58px}
+.sponsor-ticker-group{gap:35px;padding-right:35px}
+.sponsor-ticker-track{animation-duration:23s}
+@media(max-width:650px){.sponsor-ticker{padding:12px 0}.sponsor-ticker-item{width:180px;height:68px}.sponsor-ticker-item img{max-height:56px}.sponsor-ticker-item.sponsor-main img{max-height:45px}.sponsor-ticker-group{gap:22px;padding-right:22px}}
+
+/* Sponsor ticker: no fixed heading; equal logo slots and seamless continuous loop */
+.sponsor-ticker-shell{display:block}
+.sponsor-ticker-item,.sponsor-ticker-item.sponsor-main{padding:4px 12px}
+.sponsor-ticker-item img,.sponsor-ticker-item.sponsor-main img{max-width:100%;max-height:66px}
+.sponsor-ticker-track{animation:sponsor-ticker-move 23s linear infinite}
+@media(max-width:650px){.sponsor-ticker-item img,.sponsor-ticker-item.sponsor-main img{max-height:54px}}
+
+/* APD Isola editorial redesign — keep all functional modules */
+:root{--apd-ink:#20252c;--apd-red:#d92339}
+.top{box-shadow:0 10px 35px #090b1120}
+.hero{min-height:630px;background:linear-gradient(90deg,rgba(8,14,22,.91) 0%,rgba(8,14,22,.69) 46%,rgba(8,14,22,.38) 100%),url("./assets/38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg") center 46%/cover no-repeat!important}
+.hero:before{content:"";position:absolute;inset:auto 0 0;height:9px;background:linear-gradient(90deg,#d92339 0%,#d92339 25%,transparent 75%);z-index:1}
+.hero:after{border-color:#ed192b25}
+.hero .wrap{padding-top:105px;padding-bottom:105px}
+.hero h1{filter:drop-shadow(0 4px 15px #0007)}
+.hero-motto{font-size:clamp(50px,6.3vw,94px);text-shadow:0 4px 25px #000a}
+.hero-kicker{grid-column:1;letter-spacing:.14em;text-transform:uppercase;font-weight:800;font-size:11px;color:#f6f7f7d9;margin-top:20px}
+.hero .eyebrow{color:#fff;letter-spacing:.12em}
+.identity-section{background:#fff;padding:88px 0 95px;position:relative;overflow:hidden}
+.identity-section:before{content:"";position:absolute;right:-8%;top:-45%;width:55%;aspect-ratio:1;border:90px solid #d9233907;border-radius:50%;pointer-events:none}
+.identity-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.94fr);gap:clamp(30px,6vw,100px);align-items:center;position:relative}
+.identity-copy h2{color:#20252c;font-size:clamp(55px,6vw,91px);line-height:.94;margin:17px 0 23px}
+.identity-copy p{color:#5b6671;font-size:16px;max-width:540px;line-height:1.85}
+.identity-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.identity-outline{background:#fff!important;border-color:#d4d8dd!important;color:#242831!important}
+.identity-tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.identity-tile{display:flex;flex-direction:column;gap:10px;min-height:175px;padding:25px;border:1px solid #e2e5e9;background:#f8f9fa;border-radius:17px;transition:transform .2s,border-color .2s}
+.identity-tile:hover{transform:translateY(-4px);border-color:#d92339}
+.identity-icon{font:900 12px Inter,sans-serif;color:#d92339;letter-spacing:.13em}
+.identity-tile strong{font:800 32px 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;line-height:1;color:#20252c}
+.identity-tile small{color:#68727e;line-height:1.5;font-size:12px}
+.official-section{background:#f2f4f5;padding:90px 0}
+.official-section .section-head h2{color:#20252c}
+.official-section .section-head p{color:#5b6671}
+.official-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.official-card{padding:30px;background:#fff;border:1px solid #e0e4e8;border-radius:18px;display:flex;flex-direction:column;min-height:295px;box-shadow:0 10px 30px #17233509}
+.official-num{font-size:10px;font-weight:900;letter-spacing:.13em;color:#d92339}
+.official-card h3{font-size:clamp(32px,3vw,44px);color:#20252c;margin:19px 0 8px}
+.official-card p{font-size:14px;line-height:1.7;color:#66717d;flex:1}
+.official-card a{font-size:12px;font-weight:900;color:#b51e35;text-transform:uppercase;letter-spacing:.03em;margin-top:15px}
+.race-art{background:linear-gradient(120deg,#0d1923ed,#1e4a4eb8),url("./assets/38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg") center 43%/cover no-repeat!important;overflow:hidden;display:flex;align-items:center;justify-content:space-between;padding:24px 36px}
+.race-art .race-art-word{font:900 clamp(48px,6vw,88px)/.82 'Barlow Condensed',Impact,sans-serif;color:#fff;letter-spacing:-.02em;filter:none;z-index:1}
+.race-art .race-art-runner{font:900 110px 'Barlow Condensed',sans-serif;color:#fff9;transform:rotate(-18deg);filter:none;z-index:1}
+.race-art .race-art-caption{position:absolute;left:36px;bottom:18px;font:800 10px Inter,sans-serif;color:#fff;letter-spacing:.2em;filter:none;z-index:2}
+.footer-institution{margin-top:10px;font-size:12px}
+.footer-institution a:hover{color:#d92339}
+@media(max-width:950px){.identity-layout{grid-template-columns:1fr;gap:30px}.identity-copy p{max-width:760px}.official-grid{grid-template-columns:repeat(2,1fr)}.hero .wrap{padding-top:80px;padding-bottom:80px}}
+@media(max-width:650px){.hero{min-height:590px;background-position:58% center!important}.hero .wrap{padding-top:60px;padding-bottom:65px}.hero-motto{font-size:clamp(46px,11vw,65px)}.hero-kicker{font-size:10px;line-height:1.7}.identity-section,.official-section{padding:55px 0}.identity-tiles{gap:10px}.identity-tile{min-height:140px;padding:17px}.identity-tile strong{font-size:27px}.official-grid{grid-template-columns:1fr}.official-card{min-height:230px}.race-art .race-art-word{font-size:60px}}
+
+/* Hero Gran Sasso: brighter mountain image, legible text */
+.hero{background-image:linear-gradient(90deg,rgba(8,14,22,.66) 0%,rgba(8,14,22,.40) 46%,rgba(8,14,22,.17) 100%),url("./assets/38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg")!important}
+@media(max-width:650px){.hero{background-image:linear-gradient(90deg,rgba(8,14,22,.60),rgba(8,14,22,.26)),url("./assets/38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg")!important}}
+
+/* Animazione di ingresso della copertina: solo al caricamento */
+@keyframes apdHeroReveal{from{opacity:0;transform:translate3d(0,24px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes apdHeroLine{from{opacity:0;transform:scaleX(.2)}to{opacity:1;transform:scaleX(1)}}
+@media(prefers-reduced-motion:no-preference){
+.hero .hero-line{transform-origin:left center;animation:apdHeroLine .7s ease-out both .12s}
+.hero .eyebrow{animation:apdHeroReveal .75s cubic-bezier(.2,.7,.2,1) both .22s}
+.hero h1{animation:apdHeroReveal .9s cubic-bezier(.2,.7,.2,1) both .43s}
+.hero .hero-motto{animation:apdHeroReveal .9s cubic-bezier(.2,.7,.2,1) both .78s}
+.hero .actions{animation:apdHeroReveal .75s cubic-bezier(.2,.7,.2,1) both 1.16s}
+.hero .hero-kicker{animation:apdHeroReveal .75s cubic-bezier(.2,.7,.2,1) both 1.36s}
+}
+@media(prefers-reduced-motion:reduce){.hero .hero-line,.hero .eyebrow,.hero h1,.hero .hero-motto,.hero .actions,.hero .hero-kicker{animation:none!important}}
+
+/* Pulsante risultati ufficiali accanto al Match Center */
+.match-live-link{white-space:nowrap;align-self:center;box-shadow:0 8px 24px #ed192b28}
+.match-live-link .live-dot{width:8px;height:8px;border-radius:50%;background:#fff;display:inline-block;box-shadow:0 0 0 4px #ffffff30}
+@media(max-width:650px){#calendario .section-head{align-items:flex-start;gap:16px;flex-wrap:wrap}.match-live-link{align-self:flex-start}}
+
+/* Flash news centrata sul Gran Sasso, senza cambiare il layout precedente */
+.hero{padding-bottom:65px}.hero-flash{position:absolute;z-index:3;left:50%;bottom:16px;transform:translateX(-50%);width:min(880px,calc(100% - 32px));display:flex;align-items:center;justify-content:center;gap:16px;padding:13px 20px;border:1px solid #ffffff45;border-radius:14px;background:#111923d9;backdrop-filter:blur(14px);box-shadow:0 10px 32px #0005;font-size:13px}.hero-flash-label{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;font-size:11px;font-weight:900;letter-spacing:.08em;color:#fff}.hero-flash-dot{width:8px;height:8px;background:#ed192b;border-radius:50%;box-shadow:0 0 0 4px #ed192b35}.hero-flash-text{font-weight:600;line-height:1.35;color:#f5f5f5;text-align:center}.hero-flash>a{font-size:12px;font-weight:800;color:#ff7d8c;white-space:nowrap}@media(max-width:650px){.hero{padding-bottom:100px}.hero-flash{bottom:12px;gap:8px;flex-wrap:wrap;padding:12px}.hero-flash-label{font-size:10px}.hero-flash-text{flex-basis:100%;order:2;font-size:12px}.hero-flash>a{font-size:11px}}@media(prefers-reduced-motion:no-preference){.hero-flash{animation:apdFlashIn .7s ease-out 1.65s both}}@keyframes apdFlashIn{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+
