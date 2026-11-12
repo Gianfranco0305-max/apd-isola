@@ -1,0 +1,28 @@
+/* Logo APD: overlap the white navigation bar and the hero without changing the hero artwork. */
+@media (min-width: 761px) {
+  .top { overflow: visible !important; }
+  .top .nav { position: relative; }
+  .top .brand { position: relative; z-index: 12; }
+  .top .brand img.brand-logo {
+    width: 116px !important; height: 116px !important; min-width: 116px !important;
+    object-fit: contain; transform: translateY(22px);
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,.24));
+  }
+  .top .brand-wordmark { margin-left: 3px; }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .top .brand img.brand-logo { width: 98px !important; height: 98px !important; min-width: 98px !important; transform: translateY(17px); }
+}
+@media (max-width: 760px) {
+  .top { overflow: visible !important; }
+  .top .brand { position: relative; z-index: 12; }
+  .top .brand img.brand-logo {
+    width: 74px !important; height: 74px !important; min-width: 74px !important;
+    object-fit: contain; transform: translateY(9px);
+    filter: drop-shadow(0 4px 9px rgba(0,0,0,.22));
+  }
+  .top .brand-wordmark { margin-left: 2px; }
+}
+@media (max-width: 380px) {
+  .top .brand img.brand-logo { width: 66px !important; height: 66px !important; min-width: 66px !important; transform: translateY(7px); }
+}
