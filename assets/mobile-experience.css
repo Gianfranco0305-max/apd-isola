@@ -1,0 +1,52 @@
+/* Mobile-first compact homepage: preserve desktop appearance and source content. */
+@media (max-width: 760px) {
+  html { scroll-padding-top: 78px; }
+  .hero { min-height: 0 !important; height: auto !important; padding: 24px 0 20px !important; }
+  .hero .wrap { min-height: 0 !important; height: auto !important; padding-top: 12px !important; padding-bottom: 12px !important; }
+  .hero .hero-line, .hero .hero-side-note { display: none !important; }
+  .hero .eyebrow { margin-top: 6px !important; font-size: 10px !important; line-height: 1.45; }
+  .hero h1 { font-size: clamp(32px, 9vw, 44px) !important; margin: 8px 0 !important; line-height: 1 !important; }
+  .hero .hero-motto { font-size: clamp(35px, 10vw, 52px) !important; line-height: .98 !important; margin: 10px 0 16px !important; }
+  .hero .actions { display: grid !important; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px !important; margin: 14px 0 !important; }
+  .hero .actions .btn { min-width: 0; min-height: 44px; padding: 11px 8px !important; font-size: 11px !important; text-align: center; justify-content: center; white-space: normal; }
+  .hero .hero-kicker { font-size: 11px !important; margin: 10px 0 0 !important; }
+  .hero .hero-flash { position: relative !important; left: auto !important; bottom: auto !important; transform: none !important; translate: none !important; width: calc(100% - 32px) !important; margin: 8px auto 0 !important; padding: 9px 12px !important; gap: 6px !important; box-shadow: none !important; }
+  .hero .hero-flash-text { font-size: 11px !important; }
+  .home-calendar, .home-activities, .home-editorial, .home-sponsor { padding: 30px 0 !important; }
+  .home-calendar .wrap, .home-activities .wrap, .home-editorial .wrap, .home-sponsor .wrap { padding-left: 16px !important; padding-right: 16px !important; }
+  .home-calendar h2, .home-activities h2, .home-editorial h2, .home-sponsor h2 { font-size: clamp(25px, 7vw, 34px) !important; line-height: 1.08 !important; margin: 5px 0 9px !important; }
+  .home-editorial-heading { gap: 12px !important; margin-bottom: 15px !important; }
+  .home-editorial-heading p { font-size: 12px !important; line-height: 1.45; }
+  .home-editorial-heading .btn { min-height: 44px; align-self: flex-start; }
+  .home-calendar-grid, .home-activities-grid, .home-editorial-grid {
+    display: flex !important; flex-wrap: nowrap !important; gap: 12px !important;
+    overflow-x: auto !important; overflow-y: hidden !important;
+    scroll-snap-type: x mandatory; scroll-padding-inline: 2px;
+    overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch;
+    padding: 2px 2px 14px !important; margin-inline: -2px;
+    scrollbar-width: thin;
+  }
+  .home-calendar-grid > *, .home-activities-grid > *, .home-editorial-grid > * {
+    flex: 0 0 min(82vw, 315px) !important; width: min(82vw, 315px) !important;
+    max-width: none !important; min-width: 0 !important; scroll-snap-align: start;
+    height: auto !important; min-height: 0 !important;
+  }
+  .home-activity-photo, .home-activity-art { height: 120px !important; max-height: 120px !important; }
+  .home-activity, .home-news-card, .home-calendar-card { padding: 15px !important; }
+  .home-activity h3, .home-news-card h3, .home-calendar-card h3 { font-size: 21px !important; line-height: 1.12 !important; }
+  .home-activity p, .home-news-card p, .home-calendar-card p { font-size: 12px !important; }
+  .home-fipav-links { display: grid !important; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px !important; }
+  .home-fipav-links a { flex: none !important; min-width: 0; min-height: 44px; padding: 8px 6px !important; font-size: 11px !important; }
+  .apd-sponsors-layout, .apd-partner-grid { gap: 10px !important; }
+  .home-sponsor-card, .apd-partner-card { min-height: 0 !important; }
+  .sponsor-ticker { padding-block: 6px !important; }
+  .top .nav { min-height: 62px !important; }
+  .top .links.open { max-height: calc(100svh - 62px); }
+}
+@media (max-width: 380px) {
+  .hero .actions { grid-template-columns: 1fr 1fr; }
+  .home-calendar-grid > *, .home-activities-grid > *, .home-editorial-grid > * { flex-basis: 86vw !important; width: 86vw !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-calendar-grid, .home-activities-grid, .home-editorial-grid { scroll-behavior: auto !important; }
+}
