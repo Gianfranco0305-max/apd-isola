@@ -129,7 +129,7 @@
 /* APD Isola editorial redesign — keep all functional modules */
 :root{--apd-ink:#20252c;--apd-red:#d92339}
 .top{box-shadow:0 10px 35px #090b1120}
-.hero{min-height:630px;background:linear-gradient(90deg,rgba(8,14,22,.91) 0%,rgba(8,14,22,.69) 46%,rgba(8,14,22,.38) 100%),url("./assets/38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg") center 46%/cover no-repeat!important}
+.hero{min-height:630px;background:linear-gradient(90deg,rgba(8,14,22,.91) 0%,rgba(8,14,22,.69) 46%,rgba(8,14,22,.38) 100%),url("./38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg") center 46%/cover no-repeat!important}
 .hero:before{content:"";position:absolute;inset:auto 0 0;height:9px;background:linear-gradient(90deg,#d92339 0%,#d92339 25%,transparent 75%);z-index:1}
 .hero:after{border-color:#ed192b25}
 .hero .wrap{padding-top:105px;padding-bottom:105px}
@@ -159,7 +159,7 @@
 .official-card h3{font-size:clamp(32px,3vw,44px);color:#20252c;margin:19px 0 8px}
 .official-card p{font-size:14px;line-height:1.7;color:#66717d;flex:1}
 .official-card a{font-size:12px;font-weight:900;color:#b51e35;text-transform:uppercase;letter-spacing:.03em;margin-top:15px}
-.race-art{background:linear-gradient(120deg,#0d1923ed,#1e4a4eb8),url("./assets/38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg") center 43%/cover no-repeat!important;overflow:hidden;display:flex;align-items:center;justify-content:space-between;padding:24px 36px}
+.race-art{background:linear-gradient(120deg,#0d1923ed,#1e4a4eb8),url("./38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg") center 43%/cover no-repeat!important;overflow:hidden;display:flex;align-items:center;justify-content:space-between;padding:24px 36px}
 .race-art .race-art-word{font:900 clamp(48px,6vw,88px)/.82 'Barlow Condensed',Impact,sans-serif;color:#fff;letter-spacing:-.02em;filter:none;z-index:1}
 .race-art .race-art-runner{font:900 110px 'Barlow Condensed',sans-serif;color:#fff9;transform:rotate(-18deg);filter:none;z-index:1}
 .race-art .race-art-caption{position:absolute;left:36px;bottom:18px;font:800 10px Inter,sans-serif;color:#fff;letter-spacing:.2em;filter:none;z-index:2}
@@ -169,8 +169,8 @@
 @media(max-width:650px){.hero{min-height:590px;background-position:58% center!important}.hero .wrap{padding-top:60px;padding-bottom:65px}.hero-motto{font-size:clamp(46px,11vw,65px)}.hero-kicker{font-size:10px;line-height:1.7}.identity-section,.official-section{padding:55px 0}.identity-tiles{gap:10px}.identity-tile{min-height:140px;padding:17px}.identity-tile strong{font-size:27px}.official-grid{grid-template-columns:1fr}.official-card{min-height:230px}.race-art .race-art-word{font-size:60px}}
 
 /* Hero Gran Sasso: brighter mountain image, legible text */
-.hero{background-image:linear-gradient(90deg,rgba(8,14,22,.66) 0%,rgba(8,14,22,.40) 46%,rgba(8,14,22,.17) 100%),url("./assets/38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg")!important}
-@media(max-width:650px){.hero{background-image:linear-gradient(90deg,rgba(8,14,22,.60),rgba(8,14,22,.26)),url("./assets/38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg")!important}}
+.hero{background-image:linear-gradient(90deg,rgba(8,14,22,.66) 0%,rgba(8,14,22,.40) 46%,rgba(8,14,22,.17) 100%),url("./38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg")!important}
+@media(max-width:650px){.hero{background-image:linear-gradient(90deg,rgba(8,14,22,.60),rgba(8,14,22,.26)),url("./38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg")!important}}
 
 /* Animazione di ingresso della copertina: solo al caricamento */
 @keyframes apdHeroReveal{from{opacity:0;transform:translate3d(0,24px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
