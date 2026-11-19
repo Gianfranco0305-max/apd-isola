@@ -1,0 +1,89 @@
+/* APD ISOLA — 2026 visual revolution.
+   Font families, navigation, original media, dynamic match IDs and links remain untouched. */
+:root{--rev-ink:#0a121c;--rev-red:#db203a;--rev-paper:#f2f1ed;--rev-white:#fff}
+#inizio.hero{position:relative;isolation:isolate;display:flex;align-items:center;min-height:clamp(680px,89svh,940px);overflow:hidden;background-position:62% 45%!important}
+#inizio.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,#080f1ff0 0%,#0a1626d9 34%,#0a14266e 62%,#0a142610 100%);pointer-events:none}
+#inizio.hero:after{content:"ISOLA";position:absolute;bottom:5%;right:-1%;font:900 clamp(190px,31vw,510px)/.7 "Barlow Condensed",Arial,sans-serif;letter-spacing:-.09em;color:#ffffff0d;pointer-events:none;z-index:-1}
+#inizio.hero>.wrap{position:relative;width:100%;padding-top:clamp(100px,13vh,175px);padding-bottom:clamp(140px,17vh,190px)}
+#inizio.hero .hero-line{width:55px;height:5px;background:var(--rev-red);margin-bottom:20px}
+#inizio.hero .eyebrow{letter-spacing:.2em!important;font-size:11px!important;text-transform:uppercase}
+#inizio.hero h1{font:800 clamp(13px,1.3vw,18px)/1.3 Inter,Arial,sans-serif!important;letter-spacing:.24em!important;margin:25px 0 14px!important}
+#inizio.hero .hero-motto{font:900 clamp(82px,12vw,184px)/.75 "Barlow Condensed",Arial,sans-serif!important;letter-spacing:-.035em!important;max-width:1000px;filter:drop-shadow(0 12px 22px #0004)}
+#inizio.hero .hero-motto .red{color:#ff4057!important}
+#inizio.hero .hero-kicker{margin-top:22px;letter-spacing:.19em;font-size:12px;font-weight:800;text-transform:uppercase}
+#inizio.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+#inizio.hero .actions .btn{border-radius:0!important;min-height:54px;padding:16px 25px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+#inizio.hero .hero-side-note{right:5%!important;bottom:17%!important}
+#inizio.hero .hero-flash{z-index:2}
+.apd-impact-intro{background:var(--rev-red);color:#fff;position:relative;overflow:hidden}
+.apd-impact-intro:after{content:"APD";position:absolute;right:-1%;top:-16%;font:900 clamp(210px,36vw,540px)/1 "Barlow Condensed",Arial,sans-serif;color:#ffffff14;pointer-events:none}
+.apd-impact-intro-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(180px,.5fr);gap:25px;align-items:end;padding-top:clamp(65px,8vw,115px);padding-bottom:clamp(65px,8vw,115px)}
+.apd-impact-index{grid-column:1/-1;font:800 11px Inter,Arial,sans-serif;letter-spacing:.22em;color:#ffe1e6}
+.apd-impact-intro p{font:900 clamp(85px,12vw,172px)/.78 "Barlow Condensed",Arial,sans-serif!important;letter-spacing:-.025em;margin:0}
+.apd-impact-intro p em{font-style:normal;color:#101820}
+.apd-impact-desc{font:600 15px/1.6 Inter,Arial,sans-serif;max-width:270px;padding-bottom:9px}
+.home-calendar{position:relative;background:#0c1520!important;color:#fff!important;padding:clamp(75px,9vw,135px) 0!important}
+.home-calendar:before{content:"MATCH DAY";position:absolute;right:2%;top:3%;font:900 clamp(100px,17vw,250px)/1 "Barlow Condensed",Arial,sans-serif;color:#ffffff07;white-space:nowrap;pointer-events:none}
+.home-calendar .wrap{position:relative}
+.home-calendar .home-editorial-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:35px}
+.home-calendar .home-editorial-heading h2{font:900 clamp(62px,9vw,124px)/.85 "Barlow Condensed",Arial,sans-serif!important;letter-spacing:-.02em;color:#fff!important}
+.home-calendar .home-editorial-heading p{color:#c6cdd5!important}
+.home-calendar .eyebrow{color:#ff6c80!important}
+.home-calendar .home-calendar-grid{gap:12px}
+.home-calendar .home-calendar-card{position:relative;min-height:270px;padding:28px!important;border:1px solid #ffffff2a!important;border-top:5px solid #e8324a!important;border-radius:0!important;background:#172433!important;color:#fff!important;box-shadow:none!important}
+.home-calendar .home-calendar-card h3{color:#fff!important;font-size:clamp(23px,2.4vw,35px)!important}
+.home-calendar .home-calendar-card p{color:#e0e6ec!important}
+.home-calendar .home-calendar-card a{color:#fff!important}
+.home-activities{padding:clamp(90px,10vw,155px) 0!important;background:#f2f1ed!important;color:#111b27!important}
+.home-activities .eyebrow{color:#b51c31!important}
+.home-activities h2{font:900 clamp(70px,10vw,145px)/.82 "Barlow Condensed",Arial,sans-serif!important;letter-spacing:-.025em;margin:18px 0 45px!important;max-width:1000px}
+.home-activities .home-activities-grid{display:grid!important;grid-template-columns:1.25fr .75fr!important;gap:14px!important;align-items:stretch}
+.home-activities .home-activity{position:relative;isolation:isolate;overflow:hidden;display:flex!important;flex-direction:column;justify-content:flex-end;min-height:clamp(330px,36vw,500px);border:0!important;border-radius:0!important;padding:clamp(25px,4vw,55px)!important;background:#12202d!important;color:#fff!important;box-shadow:none!important}
+.home-activities .home-activity:first-child{grid-row:span 2;min-height:700px}
+.home-activities .home-activity:nth-child(2),.home-activities .home-activity:nth-child(3){min-height:343px}
+.home-activities .home-activity:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#09131b00 15%,#09131b8c 50%,#09131bed 100%);pointer-events:none}
+.home-activities .home-activity-photo{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;border-radius:0!important;margin:0!important;z-index:-2;filter:saturate(.94) contrast(1.06);transition:transform .6s ease}
+.home-activities .home-activity:hover .home-activity-photo{transform:scale(1.045)}
+.home-activities .home-activity .eyebrow{color:#ff8494!important;letter-spacing:.19em}
+.home-activities .home-activity h3{font:900 clamp(47px,6vw,96px)/.86 "Barlow Condensed",Arial,sans-serif!important;color:#fff!important;margin:15px 0!important}
+.home-activities .home-activity p{font-size:14px;color:#f0f1f2!important;max-width:310px}
+.home-activities .home-activity>span:last-child{color:#fff!important;font:800 11px Inter,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;margin-top:22px}
+.home-editorial{padding:clamp(80px,9vw,130px) 0!important;background:#fff!important}
+.home-editorial .home-editorial-heading h2{font:900 clamp(65px,9vw,125px)/.84 "Barlow Condensed",Arial,sans-serif!important;letter-spacing:-.025em}
+.home-editorial .home-editorial-grid{gap:14px}
+.home-editorial .home-news-card{border-radius:0!important;box-shadow:none!important;border:1px solid #d8dde1!important;padding:clamp(24px,3vw,42px)!important}
+.home-editorial .home-news-card:first-child{background:#d9233c!important;border-color:#d9233c!important;color:#fff!important}
+.home-editorial .home-news-card:first-child h3,.home-editorial .home-news-card:first-child p,.home-editorial .home-news-card:first-child a{color:#fff!important}
+.home-sponsor{background:#f2f1ed!important;padding:clamp(80px,9vw,125px) 0!important}
+.home-sponsor h2{font:900 clamp(66px,9vw,130px)/.86 "Barlow Condensed",Arial,sans-serif!important;letter-spacing:-.02em}
+.home-sponsor .apd-sponsor-hierarchy{margin-top:30px}
+@media(max-width:900px){
+ .apd-impact-intro-inner{grid-template-columns:1fr}
+ .apd-impact-desc{max-width:520px}
+ .home-activities .home-activities-grid{grid-template-columns:1fr 1fr!important}
+ .home-activities .home-activity:first-child{grid-column:1/-1;grid-row:auto;min-height:540px}
+ .home-activities .home-activity:nth-child(2),.home-activities .home-activity:nth-child(3){min-height:340px}
+}
+@media(max-width:650px){
+ #inizio.hero{min-height:740px;min-height:90svh;background-position:57% 50%!important}
+ #inizio.hero>.wrap{padding-top:110px;padding-bottom:130px}
+ #inizio.hero:after{font-size:210px;right:-12%;bottom:13%}
+ #inizio.hero .hero-motto{font-size:clamp(70px,16vw,108px)!important;line-height:.84!important}
+ #inizio.hero .hero-kicker{font-size:10px;letter-spacing:.1em}
+ #inizio.hero .actions{gap:8px}
+ #inizio.hero .actions .btn{min-height:46px;padding:13px 14px;font-size:11px}
+ .apd-impact-intro-inner{padding-top:62px;padding-bottom:65px}
+ .apd-impact-intro p{font-size:clamp(75px,17vw,115px)!important}
+ .apd-impact-desc{font-size:13px}
+ .home-calendar,.home-activities,.home-editorial,.home-sponsor{padding-top:70px!important;padding-bottom:75px!important}
+ .home-calendar .home-editorial-heading{align-items:start;flex-direction:column;gap:15px}
+ .home-calendar .home-editorial-heading h2,.home-editorial .home-editorial-heading h2{font-size:clamp(62px,14vw,92px)!important}
+ .home-calendar .home-calendar-card{min-height:225px;padding:22px!important}
+ .home-activities h2{font-size:clamp(72px,16vw,105px)!important}
+ .home-activities .home-activities-grid{grid-template-columns:1fr!important}
+ .home-activities .home-activity:first-child{grid-column:auto;min-height:520px}
+ .home-activities .home-activity:nth-child(2),.home-activities .home-activity:nth-child(3){min-height:380px}
+ .home-activities .home-activity h3{font-size:65px!important}
+ .home-sponsor h2{font-size:76px!important}
+}
+@media(prefers-reduced-motion:reduce){.home-activities .home-activity-photo{transition:none}}
