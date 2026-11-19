@@ -1,86 +1,45 @@
-/* Farmacia Orsini: larger logos without changing other sponsors or ticker mechanics. */
+/* APD Isola — Sponsor Wall, consolidated design. */
+/* Ticker: preserve the original continuous animation and brand proportions. */
 .sponsor-ticker-item.sponsor-orsini{width:225px;height:90px;padding:2px 8px}
 .sponsor-ticker-item.sponsor-orsini img{width:auto;height:auto;max-width:100%;max-height:84px;object-fit:contain}
-.apd-partner-grid .apd-partner-card.apd-partner-orsini{grid-column:1/-1;min-height:205px;padding:12px 22px}
-.apd-partner-grid .apd-partner-card.apd-partner-orsini img{display:block;width:100%;height:auto;max-width:650px;max-height:175px;object-fit:contain}
+.sponsor-ticker-item.sponsor-riflessi{width:245px;padding:3px 8px}
+.sponsor-ticker-item.sponsor-riflessi img{width:100%;max-width:100%;max-height:68px;object-fit:contain}
+
+/* One unbroken editorial surface, no logo cards. */
+.home-sponsor{background:#f7f7f5!important;color:#161b21;overflow:hidden}
+.home-sponsor>.wrap{max-width:1180px}
+.home-sponsor .apd-sponsor-hierarchy{max-width:1000px;margin:20px auto 0;display:flex;flex-direction:column;align-items:stretch;text-align:center;gap:0}
+.home-sponsor .apd-sponsor-tier-label{font:800 10px Inter,Arial,sans-serif;letter-spacing:.23em;color:#7a828a;margin:22px 0 8px;text-align:center}
+.home-sponsor .apd-sponsor-main{display:flex;align-items:center;justify-content:center;min-height:190px;padding:14px 0 26px;background:transparent!important;border:0!important;box-shadow:none!important}
+.home-sponsor .apd-sponsor-main img{display:block;width:min(540px,88%);height:auto;max-height:190px;object-fit:contain}
+.home-sponsor .apd-sponsor-second,.home-sponsor .apd-sponsor-others{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:38px}
+.home-sponsor .apd-sponsor-second{padding:18px 12px 34px}
+.home-sponsor .apd-sponsor-second>div{min-width:0;min-height:175px;padding:8px;display:flex;align-items:center;justify-content:center;background:transparent!important;border:0!important;box-shadow:none!important}
+.home-sponsor .apd-sponsor-second img{display:block;width:100%;height:auto;max-width:470px;max-height:165px;object-fit:contain}
+.home-sponsor .apd-sponsor-others{padding:14px 55px 8px;gap:50px}
+.home-sponsor .apd-sponsor-others a{display:flex;align-items:center;justify-content:center;min-height:115px;padding:8px;background:transparent!important;border:0!important;box-shadow:none!important}
+.home-sponsor .apd-sponsor-others img{display:block;width:100%;max-width:250px;max-height:95px;object-fit:contain}
+/* Blend away solid white image canvases against the unified light surface.
+   True transparency requires processing source assets, not CSS. */
+.home-sponsor .apd-sponsor-hierarchy img{mix-blend-mode:multiply}
+.home-sponsor .apd-sponsor-hierarchy a:hover{filter:none;transform:none}
+.home-sponsor .apd-sponsor-hierarchy a img{transition:transform .25s ease}
+@media(hover:hover){.home-sponsor .apd-sponsor-hierarchy a:hover img{transform:scale(1.035)}}
 @media(max-width:650px){
  .sponsor-ticker-item.sponsor-orsini{width:175px;height:76px;padding:2px 4px}
  .sponsor-ticker-item.sponsor-orsini img{max-height:70px}
- .apd-partner-grid .apd-partner-card.apd-partner-orsini{min-height:165px;padding:10px}
- .apd-partner-grid .apd-partner-card.apd-partner-orsini img{max-height:145px}
-}
-
-/* Compact, visually integrated sponsor section: prevent main sponsor from stretching
-   to the height of the partner cards, and use the available width purposefully. */
-.home-sponsor .apd-sponsors-layout{grid-template-columns:minmax(0,1fr);gap:16px;align-items:start}
-.home-sponsor .apd-sponsors-layout .home-sponsor-card{
- min-height:150px!important;max-height:none!important;align-self:start;
- padding:20px 28px;gap:26px;justify-content:flex-start;
-}
-.home-sponsor .home-sponsor-card img{width:min(260px,36%);max-height:112px}
-.home-sponsor .apd-partner-sponsors{gap:12px}
-.home-sponsor .apd-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.home-sponsor .apd-partner-card{min-height:132px;padding:12px 18px}
-.home-sponsor .apd-partner-grid .apd-partner-card.apd-partner-orsini{
- min-height:165px;padding:12px 18px
-}
-.home-sponsor .apd-partner-grid .apd-partner-card.apd-partner-orsini img{
- max-height:140px;max-width:740px
-}
-@media(max-width:650px){
- .home-sponsor .apd-sponsors-layout{gap:14px}
- .home-sponsor .apd-sponsors-layout .home-sponsor-card{
-  min-height:120px!important;padding:14px;gap:12px
- }
- .home-sponsor .home-sponsor-card img{width:38%;max-height:90px}
- .home-sponsor .home-sponsor-card strong{font-size:clamp(25px,6vw,34px)}
- .home-sponsor .apd-partner-grid{gap:9px}
- .home-sponsor .apd-partner-card{min-height:100px;padding:9px}
- .home-sponsor .apd-partner-grid .apd-partner-card.apd-partner-orsini{
-  min-height:140px;padding:9px
- }
- .home-sponsor .apd-partner-grid .apd-partner-card.apd-partner-orsini img{max-height:120px}
-}
-
-/* Riflessi d'Arte: preserve the complete wide lettering and contact line. */
-.sponsor-ticker-item.sponsor-riflessi{width:245px;padding:3px 8px}
-.sponsor-ticker-item.sponsor-riflessi img{width:100%;max-width:100%;max-height:68px;object-fit:contain}
-.home-sponsor .apd-partner-grid .apd-partner-card.apd-partner-riflessi{
- grid-column:1/-1;min-height:160px;padding:12px 18px
-}
-.home-sponsor .apd-partner-grid .apd-partner-card.apd-partner-riflessi img{
- display:block;width:100%;height:auto;max-width:740px;max-height:138px;object-fit:contain
-}
-@media(max-width:650px){
  .sponsor-ticker-item.sponsor-riflessi{width:190px;padding:2px 5px}
  .sponsor-ticker-item.sponsor-riflessi img{max-height:55px}
- .home-sponsor .apd-partner-grid .apd-partner-card.apd-partner-riflessi{min-height:125px;padding:9px}
- .home-sponsor .apd-partner-grid .apd-partner-card.apd-partner-riflessi img{max-height:108px}
+ .home-sponsor .apd-sponsor-hierarchy{margin-top:8px}
+ .home-sponsor .apd-sponsor-tier-label{margin:17px 0 5px;font-size:9px}
+ .home-sponsor .apd-sponsor-main{min-height:128px;padding:6px 0 15px}
+ .home-sponsor .apd-sponsor-main img{width:min(92%,400px);max-height:125px}
+ .home-sponsor .apd-sponsor-second,.home-sponsor .apd-sponsor-others{gap:10px}
+ .home-sponsor .apd-sponsor-second{padding:8px 0 20px}
+ .home-sponsor .apd-sponsor-second>div{min-height:100px;padding:3px}
+ .home-sponsor .apd-sponsor-second img{max-height:98px}
+ .home-sponsor .apd-sponsor-others{padding:9px 0 4px}
+ .home-sponsor .apd-sponsor-others a{min-height:80px;padding:4px}
+ .home-sponsor .apd-sponsor-others img{max-height:72px}
 }
-
-/* Sponsor hierarchy: editorial logo wall, no boxed-in logos. */
-.home-sponsor .apd-sponsor-hierarchy{max-width:1060px;margin:20px auto 0;display:grid;gap:15px;text-align:center}
-.home-sponsor .apd-sponsor-tier-label{font:800 11px Inter,Arial,sans-serif;letter-spacing:.18em;color:#68717c;margin-top:13px}
-.home-sponsor .apd-sponsor-main{display:flex;align-items:center;justify-content:center;gap:32px;min-height:180px;padding:15px 22px;text-decoration:none;color:inherit}
-.home-sponsor .apd-sponsor-main img{display:block;width:min(350px,45%);max-height:170px;object-fit:contain}
-.home-sponsor .apd-sponsor-main span{font:900 clamp(35px,5vw,65px) "Barlow Condensed",Arial,sans-serif;text-align:left;line-height:1}
-.home-sponsor .apd-sponsor-main small{display:block;font:500 15px Inter,Arial,sans-serif;line-height:1.5;color:#5b6571}
-.home-sponsor .apd-sponsor-second,.home-sponsor .apd-sponsor-others{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:28px}
-.home-sponsor .apd-sponsor-second>div{display:flex;align-items:center;justify-content:center;min-width:0;min-height:165px;padding:12px}
-.home-sponsor .apd-sponsor-second img{display:block;width:100%;max-width:440px;max-height:155px;object-fit:contain}
-.home-sponsor .apd-sponsor-others{border-top:1px solid #d7dadd;padding-top:15px;gap:18px}
-.home-sponsor .apd-sponsor-others a{display:flex;align-items:center;justify-content:center;min-height:115px;padding:10px}
-.home-sponsor .apd-sponsor-others img{display:block;width:100%;max-width:250px;max-height:90px;object-fit:contain}
-@media(max-width:650px){
- .home-sponsor .apd-sponsor-hierarchy{gap:9px}
- .home-sponsor .apd-sponsor-main{gap:12px;min-height:125px;padding:8px}
- .home-sponsor .apd-sponsor-main img{width:46%;max-height:110px}
- .home-sponsor .apd-sponsor-main span{font-size:clamp(29px,8vw,45px)}
- .home-sponsor .apd-sponsor-main small{font-size:11px}
- .home-sponsor .apd-sponsor-second{gap:10px}
- .home-sponsor .apd-sponsor-second>div{min-height:110px;padding:4px}
- .home-sponsor .apd-sponsor-second img{max-height:105px}
- .home-sponsor .apd-sponsor-others{gap:10px}
- .home-sponsor .apd-sponsor-others a{min-height:90px;padding:4px}
- .home-sponsor .apd-sponsor-others img{max-height:75px}
-}
+@media(prefers-reduced-motion:reduce){.home-sponsor .apd-sponsor-hierarchy a img{transition:none}}
