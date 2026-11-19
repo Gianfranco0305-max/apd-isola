@@ -1,0 +1,44 @@
+/* APD Experience / Igloo-inspired art direction: one world, one camera, one journey. */
+:root{--ice:#c7d2db;--mist:#dbe1e4;--scene-progress:0}
+body{background:#cbd5dc}
+.nav{position:fixed!important;background:transparent!important;border:0!important;padding:22px clamp(18px,3vw,54px)!important;z-index:40!important;mix-blend-mode:normal}
+.nav .identity strong,.nav .identity small{color:#fff;text-shadow:0 1px 12px #07111b}
+.nav .identity img{width:57px;height:57px}
+.nav .menu-button{background:#ffffff18;border:1px solid #ffffff6e;backdrop-filter:blur(10px)}
+.hero{height:235svh!important;min-height:0!important;display:block!important;overflow:visible!important;background:#b8c7d1!important}
+.scene-sticky{position:sticky;top:0;height:100svh;width:100%;overflow:hidden;isolation:isolate;background:#a6b8c6}
+.scene-sticky:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,#8c9da926,#b5c4cd05 42%,#121d294d 100%);opacity:calc(.7 + var(--scene-progress)*.25)}
+.hero-scene{inset:-6%!important;transform:scale(calc(1.12 + var(--scene-progress)*.18)) translateY(calc(var(--scene-progress)*-3%))!important;background-position:center 53%!important;filter:grayscale(.55) saturate(.45) contrast(.87) brightness(1.18)!important}
+.hero-shade{background:linear-gradient(180deg,#1423346b,transparent 23%,#08131e24 74%,#06121ea8)!important}
+.hero-inner{position:absolute!important;top:clamp(112px,15vh,170px)!important;left:0;right:0;padding:0 clamp(18px,4vw,65px)!important;text-align:left!important;z-index:7;opacity:calc(1 - var(--scene-progress)*1.6);transform:translateY(calc(var(--scene-progress)*-38px));transition:none!important;pointer-events:none}
+.hero-inner .hero-label{font:700 10px Inter,Arial,sans-serif!important;letter-spacing:.18em!important}
+.hero-inner .hero-title{margin:20px 0 0!important;text-align:left!important;font:900 clamp(60px,8vw,125px)/.83 "Barlow Condensed",Arial,sans-serif!important;max-width:630px!important;letter-spacing:-.02em}
+.hero-inner .hero-title .outline{color:#fff!important}
+.hero-inner .hero-copy{margin:16px 0!important;font-size:11px!important;letter-spacing:.2em!important}
+.hero-inner .hero-actions{justify-content:flex-start!important;margin-top:22px!important}
+.hero-inner .hero-scene-hint{color:#fff;font-size:10px}
+.ball-stage{inset:12vh 0 7vh!important;z-index:5!important;transform:translateY(calc(var(--scene-progress)*-4vh)) scale(calc(.84 + var(--scene-progress)*.18));transform-origin:center center;transition:none!important}
+.ball-stage:before{background:radial-gradient(circle,#f7fbff70 0%,#d4dfe846 38%,transparent 72%)!important;filter:blur(25px)}
+.ball-stage .ball-controls{bottom:1%!important;opacity:calc(1 - var(--scene-progress)*1.1)}
+.ball-stage .ball-status{display:none}
+.ball-toggle{background:#ffffff2e!important;color:#fff!important;border:1px solid #fff8!important;font-size:10px!important}
+.ball-menu a{border:1px solid #e9f2fa9e!important;border-radius:2px!important;background:#182d3fda!important;backdrop-filter:blur(18px);box-shadow:0 12px 35px #09121d48!important;letter-spacing:.12em!important}
+.ball-stage.scroll-open .ball-menu a{opacity:1;transform:translate(-50%,-50%) scale(1);visibility:visible}
+.ball-menu a:nth-child(1){top:14%!important;left:50%!important}
+.ball-menu a:nth-child(2){top:34%!important;left:24%!important}
+.ball-menu a:nth-child(3){top:34%!important;left:76%!important}
+.ball-menu a:nth-child(4){top:67%!important;left:24%!important}
+.ball-menu a:nth-child(5){top:67%!important;left:76%!important}
+.ball-menu a:nth-child(6){top:85%!important;left:50%!important}
+.hero-bottom{position:absolute!important;z-index:8!important;border:0!important;bottom:0!important;left:0;right:0;padding:24px clamp(18px,4vw,65px)!important;color:#fff!important;font-size:10px!important}
+.hero-bottom span:first-child:before{content:"///  "}
+.manifesto{background:#d3dce1!important;color:#172431!important}
+.manifesto-glow{background:radial-gradient(circle,#fff9,transparent 70%)!important}
+.manifesto h2 em{color:#567d99!important}
+.sports{background:#152534!important}
+.match{background:#243a4d!important}
+.partners{background:#d9e1e3!important}
+.partners h2 em{color:#587c94!important}
+@media(min-width:850px){.ball-stage{left:14%!important;right:14%!important}.ball-menu a:nth-child(2),.ball-menu a:nth-child(4){left:23%!important}.ball-menu a:nth-child(3),.ball-menu a:nth-child(5){left:77%!important}}
+@media(max-width:699px){.hero{height:215svh!important}.hero-inner{top:105px!important;padding:0 20px!important}.hero-inner .hero-title{font-size:clamp(58px,14vw,83px)!important}.hero-inner .hero-copy{font-size:9px!important}.ball-stage{inset:26vh 0 8vh!important;transform:scale(calc(.94 + var(--scene-progress)*.12))}.ball-menu a{width:clamp(92px,26vw,120px)!important;font-size:17px!important;min-height:55px!important}.ball-menu a:nth-child(2),.ball-menu a:nth-child(4){left:17%!important}.ball-menu a:nth-child(3),.ball-menu a:nth-child(5){left:83%!important}.hero-bottom{padding:18px!important}}
+@media(prefers-reduced-motion:reduce){.hero-scene{transform:none!important}.ball-stage{transform:none!important}.hero-inner{transform:none!important;opacity:1!important}}
