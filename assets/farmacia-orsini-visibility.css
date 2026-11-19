@@ -57,3 +57,30 @@
  .home-sponsor .apd-partner-grid .apd-partner-card.apd-partner-riflessi{min-height:125px;padding:9px}
  .home-sponsor .apd-partner-grid .apd-partner-card.apd-partner-riflessi img{max-height:108px}
 }
+
+/* Sponsor hierarchy: editorial logo wall, no boxed-in logos. */
+.home-sponsor .apd-sponsor-hierarchy{max-width:1060px;margin:20px auto 0;display:grid;gap:15px;text-align:center}
+.home-sponsor .apd-sponsor-tier-label{font:800 11px Inter,Arial,sans-serif;letter-spacing:.18em;color:#68717c;margin-top:13px}
+.home-sponsor .apd-sponsor-main{display:flex;align-items:center;justify-content:center;gap:32px;min-height:180px;padding:15px 22px;text-decoration:none;color:inherit}
+.home-sponsor .apd-sponsor-main img{display:block;width:min(350px,45%);max-height:170px;object-fit:contain}
+.home-sponsor .apd-sponsor-main span{font:900 clamp(35px,5vw,65px) "Barlow Condensed",Arial,sans-serif;text-align:left;line-height:1}
+.home-sponsor .apd-sponsor-main small{display:block;font:500 15px Inter,Arial,sans-serif;line-height:1.5;color:#5b6571}
+.home-sponsor .apd-sponsor-second,.home-sponsor .apd-sponsor-others{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:28px}
+.home-sponsor .apd-sponsor-second>div{display:flex;align-items:center;justify-content:center;min-width:0;min-height:165px;padding:12px}
+.home-sponsor .apd-sponsor-second img{display:block;width:100%;max-width:440px;max-height:155px;object-fit:contain}
+.home-sponsor .apd-sponsor-others{border-top:1px solid #d7dadd;padding-top:15px;gap:18px}
+.home-sponsor .apd-sponsor-others a{display:flex;align-items:center;justify-content:center;min-height:115px;padding:10px}
+.home-sponsor .apd-sponsor-others img{display:block;width:100%;max-width:250px;max-height:90px;object-fit:contain}
+@media(max-width:650px){
+ .home-sponsor .apd-sponsor-hierarchy{gap:9px}
+ .home-sponsor .apd-sponsor-main{gap:12px;min-height:125px;padding:8px}
+ .home-sponsor .apd-sponsor-main img{width:46%;max-height:110px}
+ .home-sponsor .apd-sponsor-main span{font-size:clamp(29px,8vw,45px)}
+ .home-sponsor .apd-sponsor-main small{font-size:11px}
+ .home-sponsor .apd-sponsor-second{gap:10px}
+ .home-sponsor .apd-sponsor-second>div{min-height:110px;padding:4px}
+ .home-sponsor .apd-sponsor-second img{max-height:105px}
+ .home-sponsor .apd-sponsor-others{gap:10px}
+ .home-sponsor .apd-sponsor-others a{min-height:90px;padding:4px}
+ .home-sponsor .apd-sponsor-others img{max-height:75px}
+}
