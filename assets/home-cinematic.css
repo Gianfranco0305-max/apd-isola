@@ -1,0 +1,65 @@
+/* APD ISOLA — cinematic home editorial redesign.
+   Additive, scoped to homepage. Original hero photo and logos are preserved.
+   No new data dependencies, no change to Match Center logic. */
+:root{--apd-cinema-ink:#101720;--apd-cinema-red:#e52b45;--apd-cinema-cream:#f4f3ef}
+#inizio.hero{min-height:min(820px,88svh);display:flex;flex-direction:column;justify-content:center;position:relative;isolation:isolate}
+#inizio.hero>.wrap{width:100%;padding-top:clamp(70px,12vh,140px);padding-bottom:clamp(90px,13vh,150px)}
+#inizio.hero .hero-motto{font-size:clamp(68px,9.8vw,158px);line-height:.83;letter-spacing:-.032em;text-wrap:balance;max-width:1100px;text-shadow:0 9px 45px #0006}
+#inizio.hero h1{letter-spacing:.2em;font-size:clamp(13px,1.7vw,21px);font-weight:800;margin-bottom:25px}
+#inizio.hero .hero-kicker{letter-spacing:.14em;text-transform:uppercase;font-size:clamp(10px,1.1vw,13px);font-weight:800}
+#inizio.hero .actions{margin-top:32px}
+#inizio.hero .actions .btn{border-radius:2px;min-height:49px;padding:14px 22px}
+#inizio.hero .hero-side-note{opacity:.8}
+.apd-impact-intro{position:relative;overflow:hidden;background:var(--apd-cinema-ink);color:#fff;border-top:1px solid #ffffff20}
+.apd-impact-intro:after{content:"APD";position:absolute;right:-3%;bottom:-19%;font:900 clamp(190px,30vw,450px)/1 "Barlow Condensed",Arial,sans-serif;letter-spacing:-.07em;color:#ffffff06;pointer-events:none}
+.apd-impact-intro-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(200px,.5fr);align-items:end;gap:24px;padding-top:clamp(54px,7vw,96px);padding-bottom:clamp(58px,7vw,105px)}
+.apd-impact-index{grid-column:1/-1;color:#ff6e83;font:800 11px Inter,Arial,sans-serif;letter-spacing:.18em}
+.apd-impact-intro p{margin:0;font:900 clamp(58px,8vw,116px)/.88 "Barlow Condensed",Arial,sans-serif;letter-spacing:-.018em}
+.apd-impact-intro p em{font-style:normal;color:#ff506b}
+.apd-impact-desc{max-width:260px;padding-bottom:6px;font:500 clamp(13px,1.25vw,16px)/1.65 Inter,Arial,sans-serif;color:#d5d9df}
+.home-calendar{background:var(--apd-cinema-cream)!important;padding-top:clamp(75px,8vw,115px)!important;padding-bottom:clamp(75px,8vw,115px)!important}
+.home-calendar .home-editorial-heading h2,.home-activities h2,.home-editorial .home-editorial-heading h2{font-size:clamp(56px,7.2vw,104px)!important;line-height:.91;letter-spacing:-.025em}
+.home-calendar .home-editorial-heading,.home-editorial .home-editorial-heading{margin-bottom:35px}
+.home-calendar .home-calendar-grid{gap:16px}
+.home-calendar .home-calendar-card{position:relative;overflow:hidden;border-radius:4px!important;border-top:4px solid var(--apd-cinema-red)!important;min-height:230px;box-shadow:0 12px 34px #1017200b}
+.home-calendar .home-calendar-card:before{content:"NEXT";position:absolute;right:12px;top:12px;font:900 12px Inter,Arial,sans-serif;letter-spacing:.14em;color:#b2b7bf}
+.home-activities{background:#0d141d!important;color:#fff!important;padding:clamp(75px,8vw,120px) 0!important}
+.home-activities h2{max-width:900px;margin-bottom:38px!important}
+.home-activities .home-activities-grid{gap:15px}
+.home-activities .home-activity{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(390px,39vw,540px);padding:24px!important;background:#121d29!important;border:1px solid #ffffff18!important;border-radius:4px!important;color:#fff!important;box-shadow:none!important}
+.home-activities .home-activity:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0a10160a 8%,#0b131ca8 57%,#0b131cf5 100%);z-index:-1;pointer-events:none}
+.home-activities .home-activity-photo{position:absolute;inset:0;width:100%!important;height:100%!important;max-height:none!important;margin:0!important;object-fit:cover;z-index:-2;filter:saturate(.92);transition:transform .5s ease,filter .5s ease;border-radius:0!important}
+.home-activities .home-activity .eyebrow{color:#ff8090!important;position:relative}
+.home-activities .home-activity h3{font:900 clamp(40px,4.2vw,70px)/.95 "Barlow Condensed",Arial,sans-serif!important;color:#fff!important;margin:12px 0!important}
+.home-activities .home-activity p{color:#e4e6e9!important;font-size:14px;max-width:240px}
+.home-activities .home-activity>span:last-child{margin-top:18px;color:#fff!important;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.home-activities .home-activity:hover .home-activity-photo{transform:scale(1.055);filter:saturate(1.08)}
+.home-editorial{padding:clamp(80px,8vw,120px) 0!important;background:#f0f1f2!important}
+.home-editorial .home-news-card{border-radius:4px!important;box-shadow:0 15px 34px #0b162010}
+.home-editorial .home-news-card:first-child{background:linear-gradient(145deg,#142130,#0d141d)!important;color:#fff!important}
+.home-editorial .home-news-card:first-child h3,.home-editorial .home-news-card:first-child p{color:#fff!important}
+.home-sponsor{padding-top:clamp(70px,7vw,100px)!important;padding-bottom:clamp(80px,8vw,110px)!important}
+.home-sponsor h2{font-size:clamp(58px,7vw,95px)!important;line-height:.95}
+@media(max-width:900px){
+ .apd-impact-intro-inner{grid-template-columns:1fr;gap:20px}
+ .apd-impact-desc{max-width:530px}
+ .home-activities .home-activity{min-height:390px}
+}
+@media(max-width:699px){
+ #inizio.hero{min-height:680px;min-height:83svh}
+ #inizio.hero>.wrap{padding-top:100px;padding-bottom:95px}
+ #inizio.hero .hero-motto{font-size:clamp(59px,14vw,91px);line-height:.89}
+ #inizio.hero h1{letter-spacing:.1em}
+ #inizio.hero .actions{gap:9px}
+ #inizio.hero .actions .btn{min-height:44px;padding:12px 14px;font-size:12px}
+ .apd-impact-intro-inner{padding-top:52px;padding-bottom:58px}
+ .apd-impact-intro p{font-size:clamp(54px,12vw,85px)}
+ .apd-impact-desc{font-size:13px}
+ .home-calendar,.home-editorial,.home-activities{padding-top:64px!important;padding-bottom:70px!important}
+ .home-calendar .home-editorial-heading h2,.home-activities h2,.home-editorial .home-editorial-heading h2{font-size:clamp(50px,11vw,75px)!important}
+ .home-activities .home-activities-grid{gap:12px}
+ .home-activities .home-activity{min-height:390px;padding:22px!important}
+ .home-activities .home-activity h3{font-size:55px!important}
+ .home-calendar .home-calendar-card{min-height:215px}
+}
+@media(prefers-reduced-motion:reduce){.home-activities .home-activity-photo{transition:none}}
