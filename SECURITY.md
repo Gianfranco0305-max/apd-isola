@@ -14,3 +14,5 @@ Do not publish credentials, private information or exploit details in a public i
 - Review third-party links and dependencies before publishing.
 
 Automated checks cover common patterns, not every vulnerability. A live HTTPS/TLS and browser audit is required before launch.
+
+Legacy preview snapshots under `/anteprima/` and `/anteprima-premium/` are excluded from live-site link checks; do not use them as launch URLs.
