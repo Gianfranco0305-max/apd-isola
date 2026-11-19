@@ -1,0 +1,48 @@
+/* APD — premium hero composition. Existing typography families, menu, hero photograph preserved. */
+#inizio.hero{min-height:clamp(680px,84svh,850px)!important;display:flex!important;align-items:stretch!important;justify-content:initial!important;background-position:center 46%!important}
+#inizio.hero:before{content:"";position:absolute;inset:0;z-index:0!important;background:linear-gradient(90deg,rgba(6,15,27,.94) 0%,rgba(7,17,30,.84) 27%,rgba(7,17,30,.45) 56%,rgba(7,17,30,.06) 100%)!important;pointer-events:none}
+#inizio.hero:after{display:none!important}
+#inizio.hero>.apd-hero-stage{position:relative;z-index:1;display:flex!important;flex-direction:column;justify-content:space-between;align-items:stretch;width:100%;padding-top:clamp(100px,13vh,155px)!important;padding-bottom:105px!important}
+#inizio.hero .apd-hero-copy{max-width:780px;width:100%;margin:0}
+#inizio.hero .apd-hero-overline{display:flex;align-items:center;gap:13px;font:800 11px/1.5 Inter,Arial,sans-serif;letter-spacing:.17em;color:#e8eaf0;text-transform:uppercase}
+#inizio.hero .apd-hero-overline-rule{width:38px;height:3px;background:#ec4458;flex:none}
+#inizio.hero .apd-hero-name{margin:36px 0 16px!important;font:800 clamp(14px,1.35vw,19px)/1.2 Inter,Arial,sans-serif!important;letter-spacing:.26em!important;color:#fff}
+#inizio.hero .apd-hero-name span{color:#fff}
+#inizio.hero .hero-motto{display:block!important;max-width:750px!important;margin:0!important;font:900 clamp(72px,8.2vw,127px)/.86 "Barlow Condensed",Arial,sans-serif!important;letter-spacing:-.018em!important;text-align:left!important;filter:none!important;text-shadow:0 5px 28px #0004}
+#inizio.hero .apd-hero-motto-last{white-space:nowrap}
+#inizio.hero .hero-motto .red{color:#ff4c63!important}
+#inizio.hero .apd-hero-description{margin:25px 0 0;max-width:420px;color:#f0f2f5;font:500 clamp(15px,1.4vw,19px)/1.55 Inter,Arial,sans-serif;letter-spacing:0}
+#inizio.hero .actions{display:flex!important;gap:12px!important;margin:31px 0 0!important;align-items:center}
+#inizio.hero .actions .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:23px;border-radius:2px!important;min-height:53px!important;padding:15px 21px!important;font:800 11px Inter,Arial,sans-serif!important;letter-spacing:.09em;text-transform:uppercase}
+#inizio.hero .actions .btn:first-child{background:#ec334e!important;border-color:#ec334e!important;color:#fff!important}
+#inizio.hero .actions .btn.ghost{background:#ffffff0a!important;color:#fff!important;border:1px solid #ffffff80!important;backdrop-filter:blur(6px)}
+#inizio.hero .apd-hero-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;margin-top:55px;padding-top:20px;border-top:1px solid #ffffff70}
+#inizio.hero .apd-hero-sports{display:flex;gap:clamp(20px,3.5vw,60px);flex-wrap:wrap}
+#inizio.hero .apd-hero-sports>span{font:700 10px Inter,Arial,sans-serif;letter-spacing:.12em;color:#ff697c}
+#inizio.hero .apd-hero-sports b{margin-left:8px;color:#fff;font-weight:800}
+#inizio.hero .apd-hero-place{display:flex;align-items:center;gap:10px;white-space:nowrap;color:#f3f4f7;font:800 10px Inter,Arial,sans-serif;letter-spacing:.14em}
+#inizio.hero .apd-hero-place i{display:block;width:20px;height:1px;background:#f24a61}
+#inizio.hero .hero-flash{z-index:3}
+@media(max-width:850px){
+ #inizio.hero:before{background:linear-gradient(90deg,#071321e8 0%,#071321b8 52%,#07132150 100%)!important}
+ #inizio.hero .apd-hero-copy{max-width:680px}
+ #inizio.hero .hero-motto{font-size:clamp(70px,11vw,105px)!important}
+ #inizio.hero .apd-hero-place{display:none}
+}
+@media(max-width:650px){
+ #inizio.hero{min-height:770px!important;min-height:89svh!important;background-position:56% center!important}
+ #inizio.hero:before{background:linear-gradient(90deg,#071321ed 0%,#071321bf 65%,#0713217d 100%)!important}
+ #inizio.hero>.apd-hero-stage{padding-top:110px!important;padding-bottom:95px!important}
+ #inizio.hero .apd-hero-overline{font-size:9px;letter-spacing:.1em;gap:8px}
+ #inizio.hero .apd-hero-overline-rule{width:23px}
+ #inizio.hero .apd-hero-name{margin:29px 0 16px!important;font-size:12px!important}
+ #inizio.hero .hero-motto{font-size:clamp(57px,13.2vw,86px)!important;line-height:.91!important;letter-spacing:-.025em!important}
+ #inizio.hero .apd-hero-description{font-size:14px;margin-top:20px}
+ #inizio.hero .actions{flex-wrap:wrap;gap:8px!important;margin-top:23px!important}
+ #inizio.hero .actions .btn{min-height:45px!important;padding:12px 14px!important;font-size:10px!important;gap:10px}
+ #inizio.hero .apd-hero-bottom{margin-top:30px;padding-top:15px}
+ #inizio.hero .apd-hero-sports{gap:11px}
+ #inizio.hero .apd-hero-sports>span{font-size:9px;letter-spacing:0}
+ #inizio.hero .apd-hero-sports b{margin-left:3px}
+}
+@media(max-width:360px){#inizio.hero .hero-motto{font-size:54px!important}#inizio.hero .apd-hero-sports>span{font-size:8px}}
