@@ -8,7 +8,7 @@ import sys
 
 root = Path(__file__).resolve().parents[1]
 errors = []
-ignored = {".git", "node_modules", ".github", "scripts"}
+ignored = {".git", "node_modules", ".github", "scripts", "anteprima-premium", "anteprima"}
 public = [p for p in root.rglob("*") if p.is_file() and not any(x in ignored for x in p.relative_to(root).parts)]
 text_files = [p for p in public if p.suffix.lower() in {".html", ".js", ".json", ".css"}]
 secret_rules = [
