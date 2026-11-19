@@ -1,0 +1,41 @@
+/* APD Isola — final premium polish.
+   Deliberately preserves approved hero image, logo, content, layout and mobile card sizing. */
+:root { --apd-polish-red: #d71932; }
+@media (hover: hover) and (pointer: fine) {
+  .home-calendar-card, .home-news-card, .home-activity {
+    transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+  }
+  .home-calendar-card:hover, .home-news-card:hover, .home-activity:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(10,18,29,.13);
+  }
+}
+.home-calendar-card, .home-news-card, .home-activity {
+  backface-visibility: hidden;
+}
+a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible {
+  outline: 3px solid var(--apd-polish-red);
+  outline-offset: 3px;
+}
+.home-fipav-links a:focus-visible {
+  outline: 3px solid #ffb4c0;
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .home-calendar-grid, .home-activities-grid, .home-editorial-grid {
+    touch-action: pan-x pan-y;
+    scroll-padding-left: 2px;
+  }
+  .home-calendar-card, .home-news-card, .home-activity {
+    box-shadow: 0 5px 16px rgba(10,18,29,.07);
+  }
+  .home-calendar-card:hover, .home-news-card:hover, .home-activity:hover {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-calendar-card, .home-news-card, .home-activity {
+    transition: none !important;
+    animation: none !important;
+  }
+}
