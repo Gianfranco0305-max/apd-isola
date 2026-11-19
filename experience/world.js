@@ -2,33 +2,33 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.m
 const canvas=document.getElementById('worldCanvas'),loading=document.getElementById('loading'),menu=document.getElementById('worldMenu'),back=document.getElementById('back'),enter=document.getElementById('enter'),fallback=document.getElementById('fallback');
 let renderer;try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});}catch(e){loading.remove();fallback.hidden=false;throw e;}
 renderer.setPixelRatio(Math.min(devicePixelRatio,1.8));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.35;renderer.shadowMap.enabled=true;
-const scene=new THREE.Scene();scene.background=new THREE.Color(0x71889d);scene.fog=new THREE.FogExp2(0x72869b,.012);
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x71889d);scene.fog=new THREE.FogExp2(0x72869b,.003);
 const camera=new THREE.PerspectiveCamera(48,1,.1,250);camera.position.set(0,2.5,14);camera.lookAt(0,1,0);
 const hemi=new THREE.HemisphereLight(0xe5f2ff,0x1a2432,2.2);scene.add(hemi);const sun=new THREE.DirectionalLight(0xffd4a2,3.4);sun.position.set(-9,17,-12);scene.add(sun);const key=new THREE.PointLight(0xffb861,90,35);key.position.set(3,6,6);scene.add(key);
 const panorama=new THREE.TextureLoader().load('../assets/38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg',()=>{loading.classList.add('done');setTimeout(()=>loading.remove(),900)},undefined,()=>loading.classList.add('done'));panorama.colorSpace=THREE.SRGBColorSpace;
-const sky=new THREE.Mesh(new THREE.SphereGeometry(110,64,32),new THREE.MeshBasicMaterial({map:panorama,side:THREE.BackSide,depthWrite:false}));sky.scale.x=-1;sky.rotation.y=Math.PI*.52;scene.add(sky);
-const groundGeo=new THREE.PlaneGeometry(210,210,100,100);groundGeo.rotateX(-Math.PI/2);const pos=groundGeo.attributes.position;for(let i=0;i<pos.count;i++){const x=pos.getX(i),z=pos.getZ(i);const d=Math.hypot(x,z);const h=Math.sin(x*.21)*Math.cos(z*.18)*.55+Math.sin(x*.055+z*.075)*1.5+Math.max(0,(d-12)*.038)*Math.sin(x*.11);pos.setY(i,h-5)}groundGeo.computeVertexNormals();const ground=new THREE.Mesh(groundGeo,new THREE.MeshStandardMaterial({color:0x34485a,roughness:1,flatShading:true}));scene.add(ground);
+const sky=new THREE.Mesh(new THREE.SphereGeometry(110,64,32),new THREE.MeshBasicMaterial({map:panorama,side:THREE.BackSide,depthWrite:false}));sky.rotation.y=Math.PI*.05;scene.add(sky);
+const groundGeo=new THREE.PlaneGeometry(210,210,100,100);groundGeo.rotateX(-Math.PI/2);const pos=groundGeo.attributes.position;for(let i=0;i<pos.count;i++){const x=pos.getX(i),z=pos.getZ(i);const d=Math.hypot(x,z);const h=Math.sin(x*.21)*Math.cos(z*.18)*.55+Math.sin(x*.055+z*.075)*1.5+Math.max(0,(d-12)*.038)*Math.sin(x*.11);pos.setY(i,h-5)}groundGeo.computeVertexNormals();const ground=new THREE.Mesh(groundGeo,new THREE.MeshStandardMaterial({color:0x34485a,roughness:1,flatShading:true}));ground.position.y=-17;scene.add(ground);
 // Geographic town layer: OpenStreetMap geometry, centered on Isola del Gran Sasso.
 // OSM buildings and roads are real mapped footprints; heights are estimated where absent.
 // If OSM is unreachable, the world remains usable with a clearly non-geographic fallback.
-const town=new THREE.Group();town.position.set(0,-4.2,-12);scene.add(town);
+const town=new THREE.Group();town.position.set(0,-2.7,-11);scene.add(town);const townPlinth=new THREE.Mesh(new THREE.BoxGeometry(32,.2,21),new THREE.MeshStandardMaterial({color:0x4c5d61,roughness:1}));townPlinth.position.set(0,-2.92,-11);scene.add(townPlinth);
 const townMat=new THREE.MeshStandardMaterial({color:0xc7b5a2,roughness:.93,flatShading:true});
 const townMat2=new THREE.MeshStandardMaterial({color:0xe0cdb4,roughness:.94,flatShading:true});
 const roofMat=new THREE.MeshStandardMaterial({color:0x935a45,roughness:.91});
 const streetMat=new THREE.LineBasicMaterial({color:0xd8c7b2,transparent:true,opacity:.62});
 const coordsCenter={lat:42.5035,lon:13.6574}, metersPerLat=111195,metersPerLon=111195*Math.cos(coordsCenter.lat*Math.PI/180);
-const townScale=.065; // approx 1 world unit per 26 m
+const townScale=.028; // approx 1 world unit per 26 m
 const project=(lon,lat)=>new THREE.Vector2((lon-coordsCenter.lon)*metersPerLon*townScale,(lat-coordsCenter.lat)*metersPerLat*townScale);
 const shapeArea=points=>{let a=0;for(let i=0;i<points.length;i++){const p=points[i],q=points[(i+1)%points.length];a+=p.x*q.y-q.x*p.y}return Math.abs(a)/2};
 const addBuilding=(points,height,index)=>{if(points.length<3||shapeArea(points)<.001)return;
  const shape=new THREE.Shape();shape.moveTo(points[0].x,points[0].y);for(let i=1;i<points.length;i++)shape.lineTo(points[i].x,points[i].y);shape.closePath();
  const geo=new THREE.ExtrudeGeometry(shape,{depth:height,bevelEnabled:false,steps:1});
  // Map XY footprint to horizontal XZ and extrude upward.
- geo.rotateX(-Math.PI/2);
+ geo.rotateX(Math.PI/2);
  const mesh=new THREE.Mesh(geo,index%3?townMat:townMat2);town.add(mesh);
- const roof=new THREE.Mesh(new THREE.ShapeGeometry(shape),roofMat);roof.rotation.x=-Math.PI/2;roof.position.y=height+.012;town.add(roof);
+ const roof=new THREE.Mesh(new THREE.ShapeGeometry(shape),roofMat);roof.rotation.x=Math.PI/2;roof.position.y=height+.012;town.add(roof);
 };
-const addRoad=points=>{if(points.length<2)return;const vertices=[];for(const p of points)vertices.push(p.x,.025,-p.y);const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));town.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points.map(p=>new THREE.Vector3(p.x,.04,-p.y))),streetMat))};
+const addRoad=points=>{if(points.length<2)return;const vertices=[];for(const p of points)vertices.push(p.x,.025,-p.y);const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));town.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points.map(p=>new THREE.Vector3(p.x,.04,p.y))),streetMat))};
 let osmBuildings=0,osmRoads=0;
 const osmStatus=document.createElement('div');osmStatus.id='geoStatus';osmStatus.setAttribute('aria-live','polite');osmStatus.textContent='RICOSTRUZIONE GEOGRAFICA IN CARICAMENTO';document.getElementById('world').appendChild(osmStatus);
 async function loadTown(){
