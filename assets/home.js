@@ -9,9 +9,14 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&nav.classList.conta
 document.addEventListener("click",e=>{if(nav.classList.contains("open")&&!nav.contains(e.target)&&!menuBtn.contains(e.target))closeMobileNav()});
 window.addEventListener("resize",()=>{if(window.innerWidth>760)closeMobileNav()});
 fetch("./content/site.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Dati non disponibili");return r.json()}).then(data=>{
- const today=new Date().toLocaleDateString("sv-SE");
+ // Show only scheduled fixtures that have not started yet, using the viewer's local time.
+ const now=new Date();
  const matches=Array.isArray(data.matches)?data.matches.filter(m=>m&&/^\d{4}-\d{2}-\d{2}$/.test(m.date||"")):[];
- const future=matches.filter(m=>m.date>=today).sort((a,b)=>(a.date+" "+(a.time||"")).localeCompare(b.date+" "+(b.time||"")));
+ const future=matches.filter(m=>{
+  const time=/^([01]\d|2[0-3]):[0-5]\d$/.test(m.time||"")?m.time:"23:59";
+  const kickoff=new Date(m.date+"T"+time+":00");
+  return !Number.isNaN(kickoff.getTime())&&kickoff>now;
+ }).sort((a,b)=>(a.date+" "+(a.time||"")).localeCompare(b.date+" "+(b.time||"")));
  const news=Array.isArray(data.news)?data.news.filter(n=>n&&n.title).sort((a,b)=>(b.date||"").localeCompare(a.date||"")):[];
  const flashText=document.getElementById("heroFlashText"),flashLink=document.getElementById("heroFlashLink");
  const latest=document.getElementById("homeNewsLatest");
@@ -33,9 +38,9 @@ fetch("./content/site.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("D
   if(m){
    const date=document.createElement("p");date.className="home-calendar-date";date.textContent=new Date(m.date+"T12:00:00").toLocaleDateString("it-IT",{weekday:"short",day:"numeric",month:"long"});
    const title=document.createElement("p");title.className="home-calendar-match";title.textContent=m.title||[m.home,m.away].filter(Boolean).join(" – ");
-   const meta=document.createElement("p");meta.className="home-calendar-meta";meta.textContent=(m.time?"Ore "+m.time:"Orario da confermare")+(m.city?" · "+m.city:"");
+   const meta=document.createElement("p");meta.className="home-calendar-meta";meta.textContent=(m.time?"Ore "+m.time:"Orario da confermare")+(m.venue?" · "+m.venue:(m.city?" · "+m.city:""));
    card.append(date,title,meta);
-  }else{const p=document.createElement("p");p.className="home-calendar-meta";p.textContent="Prossima data da confermare";card.append(p)}
+  }else{const p=document.createElement("p");p.className="home-calendar-meta";p.textContent="Prossima partita da definire";card.append(p)}
 const gid=({"Seconda Divisione":"64638","Under 17":"64455","Under 15":"64371"})[team];const links=document.createElement("div");links.className="home-fipav-links";for(const [label,suffix] of [["Risultati FIPAV ↗",""],["Classifica FIPAV ↗","/classifica"]]){const link=document.createElement("a");link.href="https://public.fipavonline.it/gironi/"+gid+suffix;link.target="_blank";link.rel="noopener noreferrer";link.textContent=label;links.append(link)}card.append(links);root.append(card)
  }
 }).catch(()=>{const root=document.getElementById("homeCalendars");root.querySelectorAll("p").forEach(p=>p.textContent="Calendario temporaneamente non disponibile")});
