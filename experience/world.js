@@ -8,6 +8,54 @@ const hemi=new THREE.HemisphereLight(0xe5f2ff,0x1a2432,2.2);scene.add(hemi);cons
 const panorama=new THREE.TextureLoader().load('../assets/38DE58D1-6DEC-4EFF-9882-09D9C83B0A3E.jpg',()=>{loading.classList.add('done');setTimeout(()=>loading.remove(),900)},undefined,()=>loading.classList.add('done'));panorama.colorSpace=THREE.SRGBColorSpace;
 const sky=new THREE.Mesh(new THREE.SphereGeometry(110,64,32),new THREE.MeshBasicMaterial({map:panorama,side:THREE.BackSide,depthWrite:false}));sky.scale.x=-1;sky.rotation.y=Math.PI*.52;scene.add(sky);
 const groundGeo=new THREE.PlaneGeometry(210,210,100,100);groundGeo.rotateX(-Math.PI/2);const pos=groundGeo.attributes.position;for(let i=0;i<pos.count;i++){const x=pos.getX(i),z=pos.getZ(i);const d=Math.hypot(x,z);const h=Math.sin(x*.21)*Math.cos(z*.18)*.55+Math.sin(x*.055+z*.075)*1.5+Math.max(0,(d-12)*.038)*Math.sin(x*.11);pos.setY(i,h-5)}groundGeo.computeVertexNormals();const ground=new THREE.Mesh(groundGeo,new THREE.MeshStandardMaterial({color:0x34485a,roughness:1,flatShading:true}));scene.add(ground);
+// Geographic town layer: OpenStreetMap geometry, centered on Isola del Gran Sasso.
+// OSM buildings and roads are real mapped footprints; heights are estimated where absent.
+// If OSM is unreachable, the world remains usable with a clearly non-geographic fallback.
+const town=new THREE.Group();town.position.set(0,-3.5,-24);scene.add(town);
+const townMat=new THREE.MeshStandardMaterial({color:0xc7b5a2,roughness:.93,flatShading:true});
+const townMat2=new THREE.MeshStandardMaterial({color:0xe0cdb4,roughness:.94,flatShading:true});
+const roofMat=new THREE.MeshStandardMaterial({color:0x935a45,roughness:.91});
+const streetMat=new THREE.LineBasicMaterial({color:0xd8c7b2,transparent:true,opacity:.62});
+const coordsCenter={lat:42.5035,lon:13.6574}, metersPerLat=111195,metersPerLon=111195*Math.cos(coordsCenter.lat*Math.PI/180);
+const townScale=.038; // approx 1 world unit per 26 m
+const project=(lon,lat)=>new THREE.Vector2((lon-coordsCenter.lon)*metersPerLon*townScale,(lat-coordsCenter.lat)*metersPerLat*townScale);
+const shapeArea=points=>{let a=0;for(let i=0;i<points.length;i++){const p=points[i],q=points[(i+1)%points.length];a+=p.x*q.y-q.x*p.y}return Math.abs(a)/2};
+const addBuilding=(points,height,index)=>{if(points.length<3||shapeArea(points)<.001)return;
+ const shape=new THREE.Shape();shape.moveTo(points[0].x,points[0].y);for(let i=1;i<points.length;i++)shape.lineTo(points[i].x,points[i].y);shape.closePath();
+ const geo=new THREE.ExtrudeGeometry(shape,{depth:height,bevelEnabled:false,steps:1});
+ // Map XY footprint to horizontal XZ and extrude upward.
+ geo.rotateX(-Math.PI/2);
+ const mesh=new THREE.Mesh(geo,index%3?townMat:townMat2);town.add(mesh);
+ const roof=new THREE.Mesh(new THREE.ShapeGeometry(shape),roofMat);roof.rotation.x=-Math.PI/2;roof.position.y=height+.012;town.add(roof);
+};
+const addRoad=points=>{if(points.length<2)return;const vertices=[];for(const p of points)vertices.push(p.x,.025,-p.y);const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));town.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points.map(p=>new THREE.Vector3(p.x,.04,-p.y))),streetMat))};
+let osmBuildings=0,osmRoads=0;
+const osmStatus=document.createElement('div');osmStatus.id='geoStatus';osmStatus.setAttribute('aria-live','polite');osmStatus.textContent='RICOSTRUZIONE GEOGRAFICA IN CARICAMENTO';document.getElementById('world').appendChild(osmStatus);
+async function loadTown(){
+ const query='[out:json][timeout:20];(way["building"](42.4980,13.6490,42.5090,13.6660);way["highway"](42.4980,13.6490,42.5090,13.6660););out geom;';
+ const endpoints=['https://overpass.kumi.systems/api/interpreter','https://overpass-api.de/api/interpreter'];
+ for(const endpoint of endpoints){try{
+  const response=await fetch(endpoint+'?data='+encodeURIComponent(query),{signal:AbortSignal.timeout(13000)});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  const data=await response.json();if(!Array.isArray(data.elements))throw Error('Invalid map data');
+  for(const e of data.elements){if(!e.geometry?.length)continue;
+   const pts=e.geometry.map(p=>project(p.lon,p.lat));
+   if(e.tags?.building){const h=Math.max(.12,Math.min(1.3,parseFloat(e.tags.height)*townScale||parseFloat(e.tags['building:levels'])*.12||.25+(osmBuildings%4)*.07));addBuilding(pts,h,osmBuildings++);}
+   else if(e.tags?.highway){addRoad(pts);osmRoads++;}
+  }
+  if(osmBuildings<10)throw Error('Insufficient mapped buildings');
+  osmStatus.textContent='EDIFICI E STRADE: OPENSTREETMAP · ALTEZZE STIMATE';
+  return;
+ }catch(e){/* retry next free OSM endpoint */}}
+ osmStatus.textContent='ANTEPRIMA ARTISTICA · DATI GEOGRAFICI NON DISPONIBILI';
+ // Deterministic abstract fallback, never presented as an exact town map.
+ for(let i=0;i<135;i++){const angle=i*2.39996,r=Math.sqrt(i)*.54;const x=Math.cos(angle)*r,z=Math.sin(angle)*r;
+  const w=.13+(i%5)*.035,d=.14+(i%4)*.04;
+  addBuilding([new THREE.Vector2(x-w,z-d),new THREE.Vector2(x+w,z-d),new THREE.Vector2(x+w,z+d),new THREE.Vector2(x-w,z+d)],.2+(i%5)*.06,i);
+ }
+}
+loadTown();
+
 const stars=new THREE.BufferGeometry(),coords=[];for(let i=0;i<400;i++){const a=Math.random()*Math.PI*2,r=20+Math.random()*65;coords.push(Math.cos(a)*r,Math.random()*30+8,Math.sin(a)*r)}stars.setAttribute('position',new THREE.Float32BufferAttribute(coords,3));scene.add(new THREE.Points(stars,new THREE.PointsMaterial({color:0xe5d3b4,size:.14,transparent:true,opacity:.5})));
 const assembly=new THREE.Group();assembly.position.y=1;scene.add(assembly);
 const ivory=new THREE.MeshPhysicalMaterial({color:0xf3eee3,metalness:.08,roughness:.34,clearcoat:.85,clearcoatRoughness:.16,side:THREE.DoubleSide}),navy=new THREE.MeshPhysicalMaterial({color:0x102a4b,metalness:.22,roughness:.31,clearcoat:.9,side:THREE.DoubleSide}),gold=new THREE.LineBasicMaterial({color:0xd9b076,transparent:true,opacity:.75});
