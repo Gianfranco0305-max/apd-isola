@@ -11,13 +11,13 @@ const groundGeo=new THREE.PlaneGeometry(210,210,100,100);groundGeo.rotateX(-Math
 // Geographic town layer: OpenStreetMap geometry, centered on Isola del Gran Sasso.
 // OSM buildings and roads are real mapped footprints; heights are estimated where absent.
 // If OSM is unreachable, the world remains usable with a clearly non-geographic fallback.
-const town=new THREE.Group();town.position.set(0,-3.5,-24);scene.add(town);
+const town=new THREE.Group();town.position.set(0,-4.2,-12);scene.add(town);
 const townMat=new THREE.MeshStandardMaterial({color:0xc7b5a2,roughness:.93,flatShading:true});
 const townMat2=new THREE.MeshStandardMaterial({color:0xe0cdb4,roughness:.94,flatShading:true});
 const roofMat=new THREE.MeshStandardMaterial({color:0x935a45,roughness:.91});
 const streetMat=new THREE.LineBasicMaterial({color:0xd8c7b2,transparent:true,opacity:.62});
 const coordsCenter={lat:42.5035,lon:13.6574}, metersPerLat=111195,metersPerLon=111195*Math.cos(coordsCenter.lat*Math.PI/180);
-const townScale=.038; // approx 1 world unit per 26 m
+const townScale=.065; // approx 1 world unit per 26 m
 const project=(lon,lat)=>new THREE.Vector2((lon-coordsCenter.lon)*metersPerLon*townScale,(lat-coordsCenter.lat)*metersPerLat*townScale);
 const shapeArea=points=>{let a=0;for(let i=0;i<points.length;i++){const p=points[i],q=points[(i+1)%points.length];a+=p.x*q.y-q.x*p.y}return Math.abs(a)/2};
 const addBuilding=(points,height,index)=>{if(points.length<3||shapeArea(points)<.001)return;
@@ -79,7 +79,7 @@ function frame(t){if(!active)return;const dt=Math.min(.05,(t-last)/1000);last=t;
 panels.forEach(({pivot,a},i)=>{pivot.position.set(Math.cos(a+.5)*v*1.75,Math.sin(a+.5)*v*1.55,Math.sin(a*2)*v*.9);pivot.rotation.set(Math.sin(a)*v*.25,Math.cos(a)*v*.22,(i%2?1:-1)*v*.16)});
 if(!opened&&!reduced)targetY+=dt*.075;angleX+=(targetX-angleX)*Math.min(1,dt*2.6);angleY+=(targetY-angleY)*Math.min(1,dt*2.6);assembly.rotation.set(angleX,angleY,0);assembly.scale.setScalar(1-v*.13);
 ring.rotation.z+=reduced?0:dt*.08;ring.material.opacity=.4+Math.sin(t*.0013)*.18;
-const z=zoom+(opened?1.5:0);camera.position.z+=(z-camera.position.z)*Math.min(1,dt*2);camera.position.x+=(Math.sin(angleY*.14)*1.2-camera.position.x)*Math.min(1,dt*1.4);camera.lookAt(0,1,0);
+const z=zoom+(opened?1.5:0);camera.position.z+=(z-camera.position.z)*Math.min(1,dt*2);camera.position.x+=(Math.sin(angleY*.32)*2.6-camera.position.x)*Math.min(1,dt*1.4);camera.position.y+=(2.5+Math.sin(angleX)*1.5-camera.position.y)*Math.min(1,dt*1.4);camera.lookAt(0,1,0);
 renderer.render(scene,camera);raf=requestAnimationFrame(frame)}
 document.addEventListener('visibilitychange',()=>{active=!document.hidden;if(active){last=performance.now();raf=requestAnimationFrame(frame)}else cancelAnimationFrame(raf)});raf=requestAnimationFrame(frame);
 setTimeout(()=>loading.classList.add('done'),5000);
